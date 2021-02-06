@@ -1,0 +1,26 @@
+name: "Andy Neuhierl"
+output_dir: "."
+navbar:
+  title: "Andy Neuhierl"
+  left:
+    - text: "Research"
+      href: research.html
+    - text: "Teaching"
+      href: teaching.html
+    - text: "Media"
+      href: media.html
+  right:
+    - icon: fa-envelope fa-lg
+      href: mailto:andreas.neuhierl@wustl.edu
+    - icon: fa-link ai-lg
+      href: https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=1210021
+    - icon: ai-google-scholar ai-lg
+      href: https://scholar.google.com/citations?user=ecA1RsEAAAAJ&hl=en
+    - icon: fa-github fa-lg
+      href: http://github.com/aneuhierl
+output:
+  html_document:
+    theme: paper
+    css:
+    - 'styles.css'
+    - 'https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css'
