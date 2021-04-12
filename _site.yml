@@ -12,7 +12,7 @@ navbar:
   right:
     - icon: fa-envelope fa-lg
       href: mailto:andreas.neuhierl@wustl.edu
-    - icon: fa-link ai-lg
+    - icon: ai-ssrn ai-lg
       href: https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=1210021
     - icon: ai-google-scholar ai-lg
       href: https://scholar.google.com/citations?user=ecA1RsEAAAAJ&hl=en
