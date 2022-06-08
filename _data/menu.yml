@@ -1,0 +1,24 @@
+- title: "CV"
+  href: "/cv/"
+
+- title: "Research"
+  href: "/research/"
+
+- title: "Teaching"
+  href: "/teaching/"
+
+- title: "Google Scholar"
+  href: "https://scholar.google.com/citations?user=ecA1RsEAAAAJ&hl=en"
+
+  # subcategories:
+  #   - subtitle: "Publications"
+  #     subhref: "/pubs/"
+  #   - subtitle: "Working Paper"
+  #     subhref: "/wp/"
+
+
+#- title: "SSRN"
+#  href: "/misc/"
+
+#- title: "Blog"
+#  href: "/blog/"

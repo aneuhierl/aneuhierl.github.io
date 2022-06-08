@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Andreas Neuhierl :: </title>
+    <meta name="description" content="Andreas Neuhierl's webpage">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="canonical" href="http://localhost:4000/research/">
+    <link rel="alternate" type="application/rss+xml" title="Andreas Neuhierl" href="http://localhost:4000/feed.xml" />
+
+    <link href='https://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+</head>
+
+
+  <body>
+  <div class="page">
+    <header class="site-header">
+    <a class="site-title" href="/">Andreas Neuhierl</a>
+    <nav class="site-nav">
+        <a href="#" class="menu-icon menu.open">
+            <svg viewBox="0 0 18 15">
+                <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+                <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+                <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+        </a>
+        <div class="trigger"><h1>Main Navigation</h1>
+            <ul class="menu">
+    
+    
+     <li><a href="/cv/" class="page-link">CV</a>
+    
+    </li>
+    
+    
+     <li><a href="/research/" class="page-link">Research</a>
+    
+    </li>
+    
+    
+     <li><a href="/teaching/" class="page-link">Teaching</a>
+    
+    </li>
+    
+    
+     <li><a href="https://scholar.google.com/citations?user=ecA1RsEAAAAJ&hl=en" class="page-link">Google Scholar</a>
+    
+    </li>
+    
+</ul>
+
+        </div>
+    </nav>
+</header>
+
+
+    <div class="post">
+    <header class="post-header">
+        <h1></h1>
+    </header>
+
+    <!-- Styles your button (this is a black square with white text) -->
+<style>
+  .back-to-top {
+    background-color: #000000;
+    color: #FFFFFF;
+    opacity: 0;
+    transition: opacity .6s ease-in-out;
+    z-index: 999;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    border-radius: 0%;
+  }
+
+  a.back-to-top {
+    font-weight: 1000;
+    letter-spacing: 2px;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.6;
+    padding-left: 2px;
+    padding-top: 14px;
+  }
+
+  .back-to-top:hover, .back-to-top:focus, .back-to-top:visited {
+    color: #FFFFFF;
+  }
+
+  .back-to-top.show {
+    opacity: 1;
+  }
+</style>
+
+<!-- Adds the back to top link to your website -->
+<p><a href="#" id="back-to-top" class="back-to-top" style="display: inline;">Top</a></p>
+
+<!-- Fades in the button when you scroll down -->
+<script>
+  var link = document.getElementById("back-to-top");
+  var amountScrolled = 250;
+
+  window.addEventListener('scroll', function(e) {
+      if ( window.pageYOffset > amountScrolled ) {
+          link.classList.add('show');
+      } else {
+          link.className = 'back-to-top';
+      }
+  });  
+<!-- Scrolls to Top -->
+  link.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      var distance = 0 - window.pageYOffset;
+      var increments = distance/(500/16);
+      function animateScroll() {
+          window.scrollBy(0, increments);
+          if (window.pageYOffset <= document.body.offsetTop) {
+              clearInterval(runAnimation);
+          }
+      };
+      // Loop the animation function
+      var runAnimation = setInterval(animateScroll, 16);
+  });
+</script>
+
+<h1 id="research">Research</h1>
+
+<p><a href="#pubs">Publications</a> <br /> <a href="#wp">Working Paper</a></p>
+
+<h3 id="published-and-accepted-papers"><a id="pubs"></a>Published and Accepted Papers</h3>
+
+<p><strong>Arbitrage Portfolios</strong>  with Soohun Kim and <a href="https://www.kellogg.northwestern.edu/faculty/directory/korajczyk_robert.aspx" target="_blank">Robert Korajczyk</a><br />
+<em>Review of Financial Studies</em>, (2021), 34, 2813–2856.<br />
+<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3263001" target="_blank">[SSRN]</a>
+<a href="https://doi.org/10.1093/rfs/hhaa102" target="_blank">[RFS]</a>
+<a href="https://github.com/aneuhierl/arbitrage-portfolios" target="_blank">[Code]</a></p>
+
+<p><strong>Frequency Dependent Risk</strong> 
+with <a href="https://sites.google.com/site/rasmusvarneskov/home" target="_blank">Rasmus Varneskov</a><br />
+<em>Journal of Financial Economics</em>, (2021), 140, 644-675. <br />
+<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3260167" target="_blank">[SSRN]</a>
+<a href="https://doi.org/10.1016/j.jfineco.2021.01.007" target="_blank">[JFE]</a></p>
+
+<p><strong>Estimating the Anomaly Base Rate</strong>  with <a href="http://www.alexchinco.com/" target="_blank">Alex Chinco</a> and <a href="https://faculty.chicagobooth.edu/michael-weber/" target="_blank">Michael Weber</a><br />
+<em>Journal of Financial Economics</em>, (2021), 140, 101-126.<br />
+<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3344499" target="_blank">[SSRN]</a>
+<a href="https://doi.org/10.1016/j.jfineco.2020.12.003" target="_blank">[JFE]</a></p>
+
+<p><strong>Data Snooping in Equity Premium Prediction</strong>  with <a href="https://www.dichtl-research-consulting.de/?lang=en#home" target="_blank">Hubert Dichtl</a>, Wolfgang Drobetz and Viktoria-Sophie Wendt<br />
+<em>International Journal of Forecasting</em>, (2021), 37, 72-94.  <br />
+<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2972011" target="_blank">[SSRN]</a>
+<a href="https://doi.org/10.1016/j.ijforecast.2020.03.002" target="_blank">[IJF]</a></p>
+
+<p><strong>Dissecting characteristics nonparametrically</strong> with <a href="https://sites.google.com/view/joachimfreyberger/home" target="_blank">Joachim Freyberger</a> and <a href="https://faculty.chicagobooth.edu/michael-weber/" target="_blank">Michael Weber</a><br />
+<em>Review of Financial Studies</em>, (2020), 33, 2326-2377.<br />
+<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2820700" target="_blank">[SSRN]</a> <a href="https://doi.org/10.1093/rfs/hhz123" target="_blank">[RFS]</a></p>
+
+<p><strong>Monetary Policy Communication, Policy Slope and the Stock Market</strong>  with <a href="https://faculty.chicagobooth.edu/michael-weber/" target="_blank">Michael Weber</a><br />
+<em>Journal of Monetary Economics</em>, (2019), 108, 140-155.<br />
+<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2748290" target="_blank">[SSRN]</a> <a href="https://doi.org/10.1016/j.jmoneco.2019.08.005" target="_blank">[JME]</a></p>
+
+<p><strong>Market Reaction to Corporate Press Releases</strong>   with <a href="http://people.brandeis.edu/~ascherbina/index.html" target="_blank">Anna Scherbina</a> and <a href="https://sites.google.com/site/schlusche/home" target="_blank">Bernd Schlusche</a><br />
+<em>Journal of Financial and Quantitative Analysis</em>, (2013), 48, 1207-1240.<br />
+<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1556532" target="_blank">[SSRN]</a> <a href="https://doi.org/10.1017/S002210901300046X" target="_blank">[JFQA]</a></p>
+
+<p><strong>Growth Optimal Investment Strategy: The Impact of Reallocation Frequency and Heavy Tails</strong>  with Günter Bamberg<br />
+<strong>German Economic Review</strong>, (2012), 13, 228–240.<br />
+<a href="">[SSRN]</a> <a href="https://doi.org/10.1111/j.1468-0475.2011.00553.x" target="_blank">[GER]</a></p>
+
+<p><strong>Data Snooping and Market-Timing Rule Performance</strong>  with <a href="https://sites.google.com/site/schlusche/home" target="_blank">Bernd Schlusche</a><br />
+<em>Journal of Financial Econometrics</em>, (2011), 9, 550-587.<br />
+<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1343896" target="_blank">[SSRN]</a> <a href="https://doi.org/10.1093/jjfinec/nbq032" target="_blank">[JFEC]</a></p>
+
+<p><strong>On the non-existence of conditional value-at-risk under heavy tails and short sales</strong>  with Günter Bamberg<br />
+<em>OR Spectrum</em>, (2010), 32, 49-60.<br />
+<a href="">[SSRN]</a> <a href="https://doi.org/10.1007/s00291-008-0138-3" target="_blank">[ORS]</a></p>
+
+<h3 id="working-paper"><a id="wp"></a>Working Paper</h3>
+
+<p><strong>Structural Deep Learning in Conditional Asset Pricing</strong>  with <a href="https://mendoza.nd.edu/mendoza-directory/profile/?slug=peter-easton" target="_blank">Jianqing Fan</a>, <a href="http://zke.fas.harvard.edu/index.html" target="_blank">Tracy Ke</a> and <a href="https://econweb.rutgers.edu/yl1114/" target="_blank">Yuan Liao</a><br />
+<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4117882" target="_blank">[SSRN]</a></p>
+
+<p><strong>Stock Option Predictability for the Cross-Section</strong>  with <a href="https://sites.google.com/view/xiaoxiaotang-homepage" target="_blank">Xiaoxiao Tang</a>, <a href="https://sites.google.com/site/rasmusvarneskov/home" target="_blank">Rasmus Varneskov</a> and <a href="http://apps.olin.wustl.edu/faculty/zhou/" target="_blank">Guofu Zhou</a> <br />
+<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3795486" target="_blank">[SSRN]</a></p>
+
+<p><strong>Inferences About Properties of Earnings With Disappearing Data</strong>  with <a href="https://mendoza.nd.edu/mendoza-directory/profile/?slug=peter-easton" target="_blank">Peter Easton</a>, <a href="https://research.tilburguniversity.edu/en/persons/martin-kapons" target="_blank">Martin Kapons</a> and <a href="https://sites.google.com/a/alumni.nd.edu/peter/research" target="_blank">Peter Kelly</a><br />
+<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3040354" target="_blank">[SSRN]</a></p>
+
+<p><strong>Time Series Momentum around FOMC Meetings</strong>  with <a href="https://faculty.chicagobooth.edu/michael-weber/" target="_blank">Michael Weber</a><br />
+<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3030126" target="_blank">[SSRN]</a></p>
+
+<p><strong>Liquidity Timing in Commodity Markets and the Impact of Financialization</strong>  with Andrew Thompson<br />
+<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2682698" target="_blank">[SSRN]</a></p>
+
+</div>
+
+
+    <footer class="site-footer">
+    Andreas Neuhierl's webpage<br />
+    Last updated on June 8, 2022<br />
+
+    <!-- Using <a href="http://jekyllrb.com/">Jekyll</a>
+    
+     :: <a href="">Website source</a>
+    
+    
+     :: Analytics by statcounter
+     -->
+</footer>
+
+
+    
+
+
+  <!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=12350557;
+var sc_invisible=1;
+var sc_security="e6740203";
+var sc_text=2;
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="shopify
+analytics ecommerce" href="http://statcounter.com/shopify/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/12350557/0/e6740203/0/"
+alt="shopify analytics ecommerce"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+
+
+
+
+
+    </div>
+  </body>
+
+</html>
