@@ -1,8 +1,9 @@
 ---
 layout: page
 permalink: /research/
-title: ""
-pubs:
+title: ''
+pubs: null
+published: true
 ---
 
 
@@ -84,7 +85,7 @@ pubs:
 ### <a id="pubs"></a>Published and Accepted Papers ###
 
 
-**Arbitrage Portfolios**  with Soohun Kim and [Robert Korajczyk](https://www.kellogg.northwestern.edu/faculty/directory/korajczyk_robert.aspx){:target="_blank"}  
+**Arbitrage Portfolios**  with [Soohun Kim](https://soohunkimi.github.io/myWebpage/) and [Robert Korajczyk](https://www.kellogg.northwestern.edu/faculty/directory/korajczyk_robert.aspx){:target="_blank"}  
 _Review of Financial Studies_, (2021), 34, 2813–2856.  
 [[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3263001){:target="_blank"}
 [[RFS]](https://doi.org/10.1093/rfs/hhaa102){:target="_blank"}
