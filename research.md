@@ -138,7 +138,7 @@ _OR Spectrum_, (2010), 32, 49-60.
 **Structural Deep Learning in Conditional Asset Pricing**  with [Jianqing Fan](https://mendoza.nd.edu/mendoza-directory/profile/?slug=peter-easton){:target="_blank"}, [Tracy Ke](http://zke.fas.harvard.edu/index.html){:target="_blank"} and [Yuan Liao](https://econweb.rutgers.edu/yl1114/){:target="_blank"}  
 [[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4117882){:target="_blank"}
   
-**Dissecting characteristics nonparametrically** with [Joachim Freyberger](https://sites.google.com/view/joachimfreyberger/home){:target="_blank"} and [Bjoern Hoeppner]() and [Michael Weber](https://faculty.chicagobooth.edu/michael-weber/){:target="_blank"}  
+**Missing Data in Asset Pricing Panels** with [Joachim Freyberger](https://sites.google.com/view/joachimfreyberger/home){:target="_blank"} and [Bjoern Hoeppner]() and [Michael Weber](https://faculty.chicagobooth.edu/michael-weber/){:target="_blank"}  
 [[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3932438){:target="_blank"}
 
 
