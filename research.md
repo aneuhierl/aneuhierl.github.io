@@ -134,6 +134,8 @@ _OR Spectrum_, (2010), 32, 49-60.
 
 ### <a id="wp"></a>Working Paper ###
 
+**Robust Stock Index Return Predictions Using Deep Learning**  with [Ravi Jagannathan]([https://fan.princeton.edu](https://www.kellogg.northwestern.edu/faculty/directory/jagannathan_ravi.aspx)){:target="_blank"} and [Yuan Liao](https://econweb.rutgers.edu/yl1114/){:target="_blank"}  
+[[coming soon]](https://www.ssrn.com){:target="_blank"}
 
 **Structural Deep Learning in Conditional Asset Pricing**  with [Jianqing Fan](https://fan.princeton.edu){:target="_blank"}, [Tracy Ke](http://zke.fas.harvard.edu/index.html){:target="_blank"} and [Yuan Liao](https://econweb.rutgers.edu/yl1114/){:target="_blank"}  
 [[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4117882){:target="_blank"}
