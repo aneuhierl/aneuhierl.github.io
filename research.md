@@ -85,7 +85,7 @@ published: true
 ### <a id="pubs"></a>Published and Accepted Papers ###
 
 **Missing Data in Asset Pricing Panels** with [Joachim Freyberger](https://sites.google.com/view/joachimfreyberger/home){:target="_blank"} and Bjoern Hoeppner and [Michael Weber](https://faculty.chicagobooth.edu/michael-weber/){:target="_blank"}
-_Review of Financial Studies_, accepted for publication. 
+_Review of Financial Studies_, accepted for publication.   
 [[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3932438){:target="_blank"}
 
 **Arbitrage Portfolios**  with [Soohun Kim](https://soohunkimi.github.io/myWebpage/) and [Robert Korajczyk](https://www.kellogg.northwestern.edu/faculty/directory/korajczyk_robert.aspx){:target="_blank"}  
