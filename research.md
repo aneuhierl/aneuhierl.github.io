@@ -84,7 +84,7 @@ published: true
 
 ### <a id="pubs"></a>Published and Accepted Papers ###
 
-**Missing Data in Asset Pricing Panels** with [Joachim Freyberger](https://sites.google.com/view/joachimfreyberger/home){:target="_blank"} and Bjoern Hoeppner and [Michael Weber](https://faculty.chicagobooth.edu/michael-weber/){:target="_blank"}
+**Missing Data in Asset Pricing Panels** with [Joachim Freyberger](https://sites.google.com/view/joachimfreyberger/home){:target="_blank"} and Bjoern Hoeppner and [Michael Weber](https://faculty.chicagobooth.edu/michael-weber/){:target="_blank"}      
 _Review of Financial Studies_, accepted for publication.    
 [[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3932438){:target="_blank"}
 
