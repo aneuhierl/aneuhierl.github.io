@@ -84,6 +84,9 @@ published: true
 
 ### <a id="pubs"></a>Published and Accepted Papers ###
 
+**Missing Data in Asset Pricing Panels** with [Joachim Freyberger](https://sites.google.com/view/joachimfreyberger/home){:target="_blank"} and Bjoern Hoeppner and [Michael Weber](https://faculty.chicagobooth.edu/michael-weber/){:target="_blank"}
+_Review of Financial Studies_, accepted for publication.
+[[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3932438){:target="_blank"}
 
 **Arbitrage Portfolios**  with [Soohun Kim](https://soohunkimi.github.io/myWebpage/) and [Robert Korajczyk](https://www.kellogg.northwestern.edu/faculty/directory/korajczyk_robert.aspx){:target="_blank"}  
 _Review of Financial Studies_, (2021), 34, 2813–2856.  
@@ -140,9 +143,6 @@ _OR Spectrum_, (2010), 32, 49-60.
 **Structural Deep Learning in Conditional Asset Pricing**  with [Jianqing Fan](https://fan.princeton.edu){:target="_blank"}, [Tracy Ke](http://zke.fas.harvard.edu/index.html){:target="_blank"} and [Yuan Liao](https://econweb.rutgers.edu/yl1114/){:target="_blank"}  
 [[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4117882){:target="_blank"}
   
-**Missing Data in Asset Pricing Panels** with [Joachim Freyberger](https://sites.google.com/view/joachimfreyberger/home){:target="_blank"} and Bjoern Hoeppner and [Michael Weber](https://faculty.chicagobooth.edu/michael-weber/){:target="_blank"}  
-[[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3932438){:target="_blank"}
-
 **Stock Option Predictability for the Cross-Section**  with [Xiaoxiao Tang](https://sites.google.com/view/xiaoxiaotang-homepage){:target="_blank"}, [Rasmus Varneskov](https://sites.google.com/site/rasmusvarneskov/home){:target="_blank"} and [Guofu Zhou](http://apps.olin.wustl.edu/faculty/zhou/){:target="_blank"}   
 [[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3795486){:target="_blank"}
 
