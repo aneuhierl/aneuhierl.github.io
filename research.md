@@ -140,7 +140,7 @@ _OR Spectrum_, (2010), 32, 49-60.
 **Robust Stock Index Return Predictions Using Deep Learning**  with [Ravi Jagannathan]([https://fan.princeton.edu](https://www.kellogg.northwestern.edu/faculty/directory/jagannathan_ravi.aspx)){:target="_blank"} and [Yuan Liao](https://econweb.rutgers.edu/yl1114/){:target="_blank"}  
 [[coming soon]](https://www.ssrn.com){:target="_blank"}
 
-**Structural Deep Learning in Conditional Asset Pricing**  with [Jianqing Fan](https://fan.princeton.edu){:target="_blank"}, [Tracy Ke](http://zke.fas.harvard.edu/index.html){:target="_blank"} and [Yuan Liao](https://econweb.rutgers.edu/yl1114/){:target="_blank"}  
+**Structural Deep Learning in Conditional Asset Pricing**  with [Jianqing Fan](https://fan.princeton.edu){:target="_blank"}, [Tracy Ke](https://zke.fas.harvard.edu){:target="_blank"} and [Yuan Liao](https://econweb.rutgers.edu/yl1114/){:target="_blank"}  
 [[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4117882){:target="_blank"}
   
 **Stock Option Predictability for the Cross-Section**  with [Xiaoxiao Tang](https://sites.google.com/view/xiaoxiaotang-homepage){:target="_blank"}, [Rasmus Varneskov](https://sites.google.com/site/rasmusvarneskov/home){:target="_blank"} and [Guofu Zhou](http://apps.olin.wustl.edu/faculty/zhou/){:target="_blank"}   
