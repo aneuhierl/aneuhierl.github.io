@@ -136,8 +136,13 @@ _OR Spectrum_, (2010), 32, 49-60.
 
 
 ### <a id="wp"></a>Working Paper ###
+**Economic Forecasts Using Many Noises**  with [Yuan Liao](https://econweb.rutgers.edu/yl1114/){:target="_blank"}, [Xinjie Ma](https://xinjiema.super.site){:target="_blank"} and [Zhentao Shi](http://zhentaoshi.github.io){:target="_blank"}   
+[[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4376898){:target="_blank"}
 
-**Robust Stock Index Return Predictions Using Deep Learning**  with [Ravi Jagannathan]([https://fan.princeton.edu](https://www.kellogg.northwestern.edu/faculty/directory/jagannathan_ravi.aspx)){:target="_blank"} and [Yuan Liao](https://econweb.rutgers.edu/yl1114/){:target="_blank"}  
+**Timing the Factor Zoo**  with [Otto Randl](https://sites.google.com/site/ottorandl/){:target="_blank"}, [Christoph Reschenhofer](https://www.christophreschenhofer.com/home){:target="_blank"} and [Josef Zechner](https://www.vgsf.ac.at/faculty/vgsf-faculty/josef-zechner/){:target="_blank"}   
+[[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4376898){:target="_blank"}
+
+**Robust Stock Index Return Predictions Using Deep Learning**  with [Ravi Jagannathan](https://www.kellogg.northwestern.edu/faculty/directory/jagannathan_ravi.aspx){:target="_blank"} and [Yuan Liao](https://econweb.rutgers.edu/yl1114/){:target="_blank"}  
 [[coming soon]](https://www.ssrn.com){:target="_blank"}
 
 **Structural Deep Learning in Conditional Asset Pricing**  with [Jianqing Fan](https://fan.princeton.edu){:target="_blank"}, [Tracy Ke](https://zke.fas.harvard.edu){:target="_blank"} and [Yuan Liao](https://econweb.rutgers.edu/yl1114/){:target="_blank"}  
