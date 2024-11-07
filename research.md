@@ -85,7 +85,7 @@ published: true
 ### <a id="pubs"></a>Published and Accepted Papers ###
 
 **Do Option Characteristics Predict the Underlying Stock Returns in the Cross-Section?**  with [Xiaoxiao Tang](https://sites.google.com/view/xiaoxiaotang-homepage){:target="_blank"}, [Rasmus Varneskov](https://sites.google.com/site/rasmusvarneskov/home){:target="_blank"} and [Guofu Zhou](http://apps.olin.wustl.edu/faculty/zhou/){:target="_blank"}   
-_Management Science_, accepted for publication.
+_Management Science_, accepted for publication.     
 [[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3795486){:target="_blank"}
 
 **Missing Data in Asset Pricing Panels** with [Joachim Freyberger](https://sites.google.com/view/joachimfreyberger/home){:target="_blank"} and Bjoern Hoeppner and [Michael Weber](https://faculty.chicagobooth.edu/michael-weber/){:target="_blank"}      
