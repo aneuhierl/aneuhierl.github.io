@@ -84,6 +84,10 @@ published: true
 
 ### <a id="pubs"></a>Published and Accepted Papers ###
 
+**Stock Option Predictability for the Cross-Section**  with [Xiaoxiao Tang](https://sites.google.com/view/xiaoxiaotang-homepage){:target="_blank"}, [Rasmus Varneskov](https://sites.google.com/site/rasmusvarneskov/home){:target="_blank"} and [Guofu Zhou](http://apps.olin.wustl.edu/faculty/zhou/){:target="_blank"}   
+_Management Science_, accepted for publication.
+[[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3795486){:target="_blank"}
+
 **Missing Data in Asset Pricing Panels** with [Joachim Freyberger](https://sites.google.com/view/joachimfreyberger/home){:target="_blank"} and Bjoern Hoeppner and [Michael Weber](https://faculty.chicagobooth.edu/michael-weber/){:target="_blank"}      
 _Review of Financial Studies_, accepted for publication.    
 [[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3932438){:target="_blank"}
@@ -148,9 +152,6 @@ _OR Spectrum_, (2010), 32, 49-60.
 **Structural Deep Learning in Conditional Asset Pricing**  with [Jianqing Fan](https://fan.princeton.edu){:target="_blank"}, [Tracy Ke](https://zke.fas.harvard.edu){:target="_blank"} and [Yuan Liao](https://econweb.rutgers.edu/yl1114/){:target="_blank"}  
 [[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4117882){:target="_blank"}
   
-**Stock Option Predictability for the Cross-Section**  with [Xiaoxiao Tang](https://sites.google.com/view/xiaoxiaotang-homepage){:target="_blank"}, [Rasmus Varneskov](https://sites.google.com/site/rasmusvarneskov/home){:target="_blank"} and [Guofu Zhou](http://apps.olin.wustl.edu/faculty/zhou/){:target="_blank"}   
-[[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3795486){:target="_blank"}
-
 **Inferences About Properties of Earnings With Disappearing Data**  with [Peter Easton](https://mendoza.nd.edu/mendoza-directory/profile/?slug=peter-easton){:target="_blank"}, [Martin Kapons](https://research.tilburguniversity.edu/en/persons/martin-kapons){:target="_blank"} and [Peter Kelly](https://sites.google.com/a/alumni.nd.edu/peter/research){:target="_blank"}  
 [[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3040354){:target="_blank"}
 
