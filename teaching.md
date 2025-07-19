@@ -4,10 +4,16 @@ title: Teaching
 permalink: /teaching/
 ---
 
-## Washington University in St. Louis, Olin School of Business
+### Washington University in St. Louis, Olin School of Business
 
+* **FIN 532**  -- Investment Theory
+  *Spring 2025*
+
+* **FIN 441**  -- Investments
+  *Spring 2024, 2025*
+  
 * **FIN 450F / 550F**  -- Financial Technology: Methods and Practice (FinTech)   
-  *Spring 2021, 2022*
+  *Spring 2021, 2022, 2023, 2024, 2025*
 
 
 ### University of Chicago, Booth School of Business
