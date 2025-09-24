@@ -1,2 +1,3 @@
 - [Two Risky Assets Example](https://aneuhierl.github.io/investments/two_assets.html).
 - [Multiple Assets Example](https://aneuhierl.github.io/investments/multiple_assets.html).
+- [Multiple Assets Example and Risk-free Asset](https://aneuhierl.github.io/investments/mv_plot_with_rf.html).
