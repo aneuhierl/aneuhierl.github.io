@@ -1,1 +1,2 @@
-- [Two Assets Example](https://aneuhierl.github.io/investments/two_assets.html).
+- [Two Risky Assets Example](https://aneuhierl.github.io/investments/two_assets.html).
+- [Multiple Assets Example](https://aneuhierl.github.io/investments/multiple_assets.html).
