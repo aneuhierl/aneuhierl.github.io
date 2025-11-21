@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Option Payoff & Profit Visualizer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.27.0/plotly.min.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 30px;
+        }
+        h1 {
+            color: #333;
+            margin-top: 0;
+            font-size: 2em;
+            text-align: center;
+        }
+        .controls {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .sidebar {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            max-height: 700px;
+            overflow-y: auto;
+        }
+        .section {
+            margin-bottom: 25px;
+        }
+        .section h3 {
+            color: #667eea;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 5px;
+        }
+        .strategy-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+        .strategy-btn {
+            padding: 10px;
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: all 0.2s;
+            color: #667eea;
+            font-weight: 500;
+        }
+        .strategy-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+        .strategy-btn.active {
+            background: #667eea;
+            color: white;
+        }
+        .option-row {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            border: 1px solid #dee2e6;
+        }
+        .option-row.disabled {
+            opacity: 0.5;
+        }
+        .option-controls {
+            display: grid;
+            grid-template-columns: 40px 1fr 1fr 80px 80px;
+            gap: 10px;
+            align-items: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.85em;
+            color: #666;
+            font-weight: 500;
+        }
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        select, input[type="number"] {
+            padding: 8px;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            font-size: 0.9em;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        select:focus, input[type="number"]:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .chart-container {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .settings {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .setting-group label {
+            margin-bottom: 5px;
+        }
+        .info-box {
+            background: #e7f3ff;
+            border-left: 4px solid #667eea;
+            padding: 12px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .reset-btn {
+            width: 100%;
+            padding: 12px;
+            background: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        .reset-btn:hover {
+            background: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📈 Option Payoff & Profit Visualizer</h1>
+        
+        <div class="controls">
+            <div class="sidebar">
+                <div class="section">
+                    <h3>Pre-set Strategies</h3>
+                    <div class="info-box">
+                        Select a strategy to auto-populate options
+                    </div>
+                    <div class="strategy-buttons">
+                        <button class="strategy-btn" onclick="loadStrategy('long_call')">Long Call</button>
+                        <button class="strategy-btn" onclick="loadStrategy('long_put')">Long Put</button>
+                        <button class="strategy-btn" onclick="loadStrategy('straddle')">Long Straddle</button>
+                        <button class="strategy-btn" onclick="loadStrategy('strangle')">Long Strangle</button>
+                        <button class="strategy-btn" onclick="loadStrategy('bull_call')">Bull Call Spread</button>
+                        <button class="strategy-btn" onclick="loadStrategy('bear_put')">Bear Put Spread</button>
+                        <button class="strategy-btn" onclick="loadStrategy('butterfly')">Butterfly</button>
+                        <button class="strategy-btn" onclick="loadStrategy('iron_condor')">Iron Condor</button>
+                        <button class="strategy-btn" onclick="loadStrategy('collar')">Collar</button>
+                        <button class="strategy-btn" onclick="loadStrategy('custom')">Custom</button>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>Chart Settings</h3>
+                    <div class="settings">
+                        <div class="setting-group">
+                            <label>Min Stock Price</label>
+                            <input type="number" id="minPrice" value="50" onchange="updateChart()">
+                        </div>
+                        <div class="setting-group">
+                            <label>Max Stock Price</label>
+                            <input type="number" id="maxPrice" value="150" onchange="updateChart()">
+                        </div>
+                        <div class="setting-group">
+                            <label>Current Price</label>
+                            <input type="number" id="spotPrice" value="100" onchange="updateChart()">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>Custom Options (Max 6)</h3>
+                    <div id="optionsContainer"></div>
+                    <button class="reset-btn" onclick="resetAll()">Reset All</button>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <div id="chart"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize options array
+        const maxOptions = 6;
+        let options = [];
+
+        // Create option rows
+        function initializeOptions() {
+            const container = document.getElementById('optionsContainer');
+            container.innerHTML = '';
+            
+            for (let i = 0; i < maxOptions; i++) {
+                const option = {
+                    enabled: false,
+                    position: 'long',
+                    type: 'call',
+                    strike: 100,
+                    premium: 5
+                };
+                options.push(option);
+                
+                const row = document.createElement('div');
+                row.className = 'option-row disabled';
+                row.id = `option-${i}`;
+                row.innerHTML = `
+                    <div class="option-controls">
+                        <div>
+                            <input type="checkbox" id="enabled-${i}" onchange="toggleOption(${i})" style="margin-top: 25px;">
+                        </div>
+                        <div>
+                            <label>Position</label>
+                            <select id="position-${i}" onchange="updateOption(${i})" disabled>
+                                <option value="long">Long</option>
+                                <option value="short">Short</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Type</label>
+                            <select id="type-${i}" onchange="updateOption(${i})" disabled>
+                                <option value="call">Call</option>
+                                <option value="put">Put</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Strike</label>
+                            <input type="number" id="strike-${i}" value="100" onchange="updateOption(${i})" disabled>
+                        </div>
+                        <div>
+                            <label>Premium</label>
+                            <input type="number" id="premium-${i}" value="5" step="0.5" onchange="updateOption(${i})" disabled>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(row);
+            }
+        }
+
+        function toggleOption(index) {
+            const enabled = document.getElementById(`enabled-${index}`).checked;
+            options[index].enabled = enabled;
+            
+            const row = document.getElementById(`option-${index}`);
+            const inputs = row.querySelectorAll('select, input[type="number"]');
+            
+            if (enabled) {
+                row.classList.remove('disabled');
+                inputs.forEach(input => input.disabled = false);
+            } else {
+                row.classList.add('disabled');
+                inputs.forEach(input => input.disabled = true);
+            }
+            
+            updateChart();
+        }
+
+        function updateOption(index) {
+            options[index].position = document.getElementById(`position-${index}`).value;
+            options[index].type = document.getElementById(`type-${index}`).value;
+            options[index].strike = parseFloat(document.getElementById(`strike-${index}`).value);
+            options[index].premium = parseFloat(document.getElementById(`premium-${index}`).value);
+            updateChart();
+        }
+
+        function calculatePayoff(spotPrice, option) {
+            const multiplier = option.position === 'long' ? 1 : -1;
+            let payoff = 0;
+            
+            if (option.type === 'call') {
+                payoff = Math.max(0, spotPrice - option.strike);
+            } else {
+                payoff = Math.max(0, option.strike - spotPrice);
+            }
+            
+            return multiplier * payoff;
+        }
+
+        function calculateProfit(spotPrice, option) {
+            const payoff = calculatePayoff(spotPrice, option);
+            const premiumCost = option.position === 'long' ? -option.premium : option.premium;
+            return payoff + premiumCost;
+        }
+
+        function updateChart() {
+            const minPrice = parseFloat(document.getElementById('minPrice').value);
+            const maxPrice = parseFloat(document.getElementById('maxPrice').value);
+            const spotPrice = parseFloat(document.getElementById('spotPrice').value);
+            
+            const priceRange = [];
+            const step = (maxPrice - minPrice) / 200;
+            for (let p = minPrice; p <= maxPrice; p += step) {
+                priceRange.push(p);
+            }
+
+            const traces = [];
+            const activeOptions = options.filter(opt => opt.enabled);
+            
+            // Individual option traces
+            activeOptions.forEach((option, idx) => {
+                const profits = priceRange.map(price => calculateProfit(price, option));
+                const label = `${option.position === 'long' ? 'Long' : 'Short'} ${option.type.toUpperCase()} @ ${option.strike}`;
+                
+                traces.push({
+                    x: priceRange,
+                    y: profits,
+                    mode: 'lines',
+                    name: label,
+                    line: { dash: 'dash', width: 1.5 },
+                    opacity: 0.6
+                });
+            });
+
+            // Total position trace
+            if (activeOptions.length > 0) {
+                const totalProfits = priceRange.map(price => {
+                    return activeOptions.reduce((sum, option) => {
+                        return sum + calculateProfit(price, option);
+                    }, 0);
+                });
+
+                traces.push({
+                    x: priceRange,
+                    y: totalProfits,
+                    mode: 'lines',
+                    name: 'Total Position',
+                    line: { width: 3, color: '#667eea' }
+                });
+            }
+
+            // Zero line
+            traces.push({
+                x: priceRange,
+                y: new Array(priceRange.length).fill(0),
+                mode: 'lines',
+                name: 'Break-even',
+                line: { dash: 'dot', width: 1, color: 'black' },
+                showlegend: false
+            });
+
+            // Current spot price line
+            const yMin = Math.min(...traces.flatMap(t => t.y || []));
+            const yMax = Math.max(...traces.flatMap(t => t.y || []));
+            traces.push({
+                x: [spotPrice, spotPrice],
+                y: [yMin * 1.1, yMax * 1.1],
+                mode: 'lines',
+                name: 'Current Price',
+                line: { dash: 'dot', width: 2, color: 'red' }
+            });
+
+            const layout = {
+                title: 'Option Strategy P&L Diagram',
+                xaxis: {
+                    title: 'Stock Price at Expiration',
+                    gridcolor: '#e0e0e0'
+                },
+                yaxis: {
+                    title: 'Profit / Loss ($)',
+                    gridcolor: '#e0e0e0',
+                    zeroline: true,
+                    zerolinecolor: 'black',
+                    zerolinewidth: 2
+                },
+                hovermode: 'x unified',
+                plot_bgcolor: '#fafafa',
+                paper_bgcolor: 'white',
+                font: { family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' },
+                height: 600,
+                margin: { t: 50, b: 50, l: 60, r: 30 }
+            };
+
+            Plotly.newPlot('chart', traces, layout, { responsive: true });
+        }
+
+        function loadStrategy(strategy) {
+            // Clear all active buttons
+            document.querySelectorAll('.strategy-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Reset all options first
+            for (let i = 0; i < maxOptions; i++) {
+                document.getElementById(`enabled-${i}`).checked = false;
+                toggleOption(i);
+            }
+
+            const strategies = {
+                long_call: [
+                    { position: 'long', type: 'call', strike: 100, premium: 5 }
+                ],
+                long_put: [
+                    { position: 'long', type: 'put', strike: 100, premium: 5 }
+                ],
+                straddle: [
+                    { position: 'long', type: 'call', strike: 100, premium: 5 },
+                    { position: 'long', type: 'put', strike: 100, premium: 5 }
+                ],
+                strangle: [
+                    { position: 'long', type: 'call', strike: 110, premium: 3 },
+                    { position: 'long', type: 'put', strike: 90, premium: 3 }
+                ],
+                bull_call: [
+                    { position: 'long', type: 'call', strike: 95, premium: 7 },
+                    { position: 'short', type: 'call', strike: 105, premium: 3 }
+                ],
+                bear_put: [
+                    { position: 'long', type: 'put', strike: 105, premium: 7 },
+                    { position: 'short', type: 'put', strike: 95, premium: 3 }
+                ],
+                butterfly: [
+                    { position: 'long', type: 'call', strike: 90, premium: 12 },
+                    { position: 'short', type: 'call', strike: 100, premium: 6 },
+                    { position: 'short', type: 'call', strike: 100, premium: 6 },
+                    { position: 'long', type: 'call', strike: 110, premium: 3 }
+                ],
+                iron_condor: [
+                    { position: 'long', type: 'put', strike: 85, premium: 2 },
+                    { position: 'short', type: 'put', strike: 95, premium: 4 },
+                    { position: 'short', type: 'call', strike: 105, premium: 4 },
+                    { position: 'long', type: 'call', strike: 115, premium: 2 }
+                ],
+                collar: [
+                    { position: 'long', type: 'put', strike: 95, premium: 3 },
+                    { position: 'short', type: 'call', strike: 105, premium: 3 }
+                ],
+                custom: []
+            };
+
+            const selectedStrategy = strategies[strategy];
+            selectedStrategy.forEach((opt, idx) => {
+                if (idx < maxOptions) {
+                    document.getElementById(`enabled-${idx}`).checked = true;
+                    document.getElementById(`position-${idx}`).value = opt.position;
+                    document.getElementById(`type-${idx}`).value = opt.type;
+                    document.getElementById(`strike-${idx}`).value = opt.strike;
+                    document.getElementById(`premium-${idx}`).value = opt.premium;
+                    toggleOption(idx);
+                    updateOption(idx);
+                }
+            });
+        }
+
+        function resetAll() {
+            document.querySelectorAll('.strategy-btn').forEach(btn => btn.classList.remove('active'));
+            for (let i = 0; i < maxOptions; i++) {
+                document.getElementById(`enabled-${i}`).checked = false;
+                document.getElementById(`position-${i}`).value = 'long';
+                document.getElementById(`type-${i}`).value = 'call';
+                document.getElementById(`strike-${i}`).value = 100;
+                document.getElementById(`premium-${i}`).value = 5;
+                toggleOption(i);
+            }
+            updateChart();
+        }
+
+        // Initialize on load
+        initializeOptions();
+        updateChart();
+    </script>
+</body>
+</html>
