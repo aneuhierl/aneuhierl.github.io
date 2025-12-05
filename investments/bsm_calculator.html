@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black-Scholes-Merton Calculator</title>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <script>
+        if (typeof Plotly === 'undefined') {
+            document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.27.0/plotly.min.js"><\/script>');
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0f14;
+            --bg-secondary: #111920;
+            --bg-tertiary: #1a242d;
+            --accent-cyan: #00d4aa;
+            --accent-orange: #ff6b35;
+            --accent-blue: #4a9eff;
+            --accent-purple: #a855f7;
+            --text-primary: #e8edf2;
+            --text-secondary: #8a9bab;
+            --text-muted: #5a6b7a;
+            --border-color: #2a3a4a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+        }
+
+        .app-container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            min-height: 100vh;
+        }
+
+        .control-panel {
+            background: var(--bg-secondary);
+            border-right: 1px solid var(--border-color);
+            padding: 24px;
+            overflow-y: auto;
+        }
+
+        .panel-header {
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .panel-header h1 {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--accent-cyan);
+            margin-bottom: 4px;
+        }
+
+        .panel-header p {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .toggle-group {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .toggle-btn {
+            flex: 1;
+            padding: 10px 16px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-tertiary);
+            color: var(--text-secondary);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-radius: 4px;
+        }
+
+        .toggle-btn:hover {
+            border-color: var(--text-muted);
+        }
+
+        .toggle-btn.active {
+            background: var(--accent-cyan);
+            border-color: var(--accent-cyan);
+            color: var(--bg-primary);
+        }
+
+        .toggle-btn.active.put {
+            background: var(--accent-orange);
+            border-color: var(--accent-orange);
+        }
+
+        .input-group {
+            margin-bottom: 12px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 5px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px 12px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            color: var(--text-primary);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 13px;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--accent-cyan);
+        }
+
+        .input-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .results-section {
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .price-display {
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .price-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .price-value {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .greeks-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .greek-item {
+            background: var(--bg-tertiary);
+            border-radius: 6px;
+            padding: 12px;
+        }
+
+        .greek-name {
+            font-size: 10px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 2px;
+        }
+
+        .greek-value {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--accent-cyan);
+        }
+
+        .greek-item.delta .greek-value { color: var(--accent-cyan); }
+        .greek-item.gamma .greek-value { color: var(--accent-orange); }
+        .greek-item.theta .greek-value { color: var(--accent-purple); }
+        .greek-item.vega .greek-value { color: var(--accent-blue); }
+        .greek-item.rho .greek-value { color: #f472b6; }
+
+        .iv-container {
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            padding: 14px;
+        }
+
+        .iv-container .input-group {
+            margin-bottom: 10px;
+        }
+
+        .iv-btn {
+            width: 100%;
+            padding: 10px;
+            background: var(--accent-blue);
+            border: none;
+            border-radius: 4px;
+            color: var(--bg-primary);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-bottom: 10px;
+        }
+
+        .iv-btn:hover {
+            background: #5eaeff;
+        }
+
+        .iv-result {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 10px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .iv-label {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .iv-value {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--accent-blue);
+        }
+
+        .iv-value.error {
+            color: var(--accent-orange);
+            font-size: 12px;
+        }
+
+        .viz-panel {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .chart-container {
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            padding: 16px;
+            flex: 1;
+        }
+
+        .chart-title {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .chart {
+            height: 280px;
+        }
+
+        @media (max-width: 900px) {
+            .app-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div class="control-panel">
+            <div class="panel-header">
+                <h1>Black-Scholes-Merton</h1>
+                <p>Option Pricing Calculator</p>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Option Type</div>
+                <div class="toggle-group">
+                    <button class="toggle-btn active" id="call-btn" onclick="setOptionType('call')">Call</button>
+                    <button class="toggle-btn" id="put-btn" onclick="setOptionType('put')">Put</button>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Parameters</div>
+                <div class="input-group">
+                    <label>Stock Price (S)</label>
+                    <input type="number" id="spot-price" value="100" step="0.01">
+                </div>
+                <div class="input-group">
+                    <label>Strike Price (K)</label>
+                    <input type="number" id="strike-price" value="100" step="0.01">
+                </div>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label>Time to Expiry (years)</label>
+                        <input type="number" id="time-to-expiry" value="1" step="0.01" min="0.01">
+                    </div>
+                    <div class="input-group">
+                        <label>Volatility (σ %)</label>
+                        <input type="number" id="volatility" value="20" step="0.1" min="0.1">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Risk-Free Rate (%)</label>
+                    <input type="number" id="risk-free-rate" value="5" step="0.1">
+                </div>
+            </div>
+
+            <div class="results-section">
+                <div class="section-title">Option Price</div>
+                <div class="price-display">
+                    <div class="price-label">Premium</div>
+                    <div class="price-value" id="option-price">$0.00</div>
+                </div>
+
+                <div class="section-title">Greeks</div>
+                <div class="greeks-grid">
+                    <div class="greek-item delta">
+                        <div class="greek-name">Delta (Δ)</div>
+                        <div class="greek-value" id="delta">0.0000</div>
+                    </div>
+                    <div class="greek-item gamma">
+                        <div class="greek-name">Gamma (Γ)</div>
+                        <div class="greek-value" id="gamma">0.0000</div>
+                    </div>
+                    <div class="greek-item theta">
+                        <div class="greek-name">Theta (Θ)</div>
+                        <div class="greek-value" id="theta">0.0000</div>
+                    </div>
+                    <div class="greek-item vega">
+                        <div class="greek-name">Vega (ν)</div>
+                        <div class="greek-value" id="vega">0.0000</div>
+                    </div>
+                    <div class="greek-item rho">
+                        <div class="greek-name">Rho (ρ)</div>
+                        <div class="greek-value" id="rho">0.0000</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-section">
+                <div class="section-title">Implied Volatility</div>
+                <div class="iv-container">
+                    <div class="input-group">
+                        <label>Market Price ($)</label>
+                        <input type="number" id="market-price" placeholder="Enter observed price" step="0.01">
+                    </div>
+                    <button class="iv-btn" onclick="calculateIV()">Calculate IV</button>
+                    <div class="iv-result" id="iv-result">
+                        <span class="iv-label">Implied Vol:</span>
+                        <span class="iv-value" id="implied-vol">—</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="viz-panel">
+            <div class="chart-container">
+                <div class="chart-title">Option Value & Payoff vs Stock Price</div>
+                <div class="chart" id="price-chart"></div>
+            </div>
+            <div class="chart-container">
+                <div class="chart-title">Delta vs Stock Price</div>
+                <div class="chart" id="delta-chart"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let optionType = 'call';
+
+        function setOptionType(type) {
+            optionType = type;
+            document.getElementById('call-btn').classList.toggle('active', type === 'call');
+            document.getElementById('put-btn').classList.toggle('active', type === 'put');
+            document.getElementById('call-btn').classList.remove('put');
+            document.getElementById('put-btn').classList.remove('put');
+            if (type === 'put') {
+                document.getElementById('put-btn').classList.add('put');
+            }
+            calculate();
+        }
+
+        // Standard normal CDF
+        function normCDF(x) {
+            const a1 = 0.254829592;
+            const a2 = -0.284496736;
+            const a3 = 1.421413741;
+            const a4 = -1.453152027;
+            const a5 = 1.061405429;
+            const p = 0.3275911;
+
+            const sign = x < 0 ? -1 : 1;
+            x = Math.abs(x) / Math.sqrt(2);
+
+            const t = 1.0 / (1.0 + p * x);
+            const y = 1.0 - (((((a5 * t + a4) * t) + a3) * t + a2) * t + a1) * t * Math.exp(-x * x);
+
+            return 0.5 * (1.0 + sign * y);
+        }
+
+        // Standard normal PDF
+        function normPDF(x) {
+            return Math.exp(-0.5 * x * x) / Math.sqrt(2 * Math.PI);
+        }
+
+        function blackScholes(S, K, T, r, sigma, isCall) {
+            if (T <= 0 || sigma <= 0) {
+                const intrinsic = isCall ? Math.max(S - K, 0) : Math.max(K - S, 0);
+                return {
+                    price: intrinsic,
+                    delta: isCall ? (S > K ? 1 : 0) : (S < K ? -1 : 0),
+                    gamma: 0,
+                    theta: 0,
+                    vega: 0,
+                    rho: 0
+                };
+            }
+
+            const d1 = (Math.log(S / K) + (r + 0.5 * sigma * sigma) * T) / (sigma * Math.sqrt(T));
+            const d2 = d1 - sigma * Math.sqrt(T);
+
+            const Nd1 = normCDF(d1);
+            const Nd2 = normCDF(d2);
+            const Nmd1 = normCDF(-d1);
+            const Nmd2 = normCDF(-d2);
+            const nd1 = normPDF(d1);
+
+            let price, delta, rho;
+
+            if (isCall) {
+                price = S * Nd1 - K * Math.exp(-r * T) * Nd2;
+                delta = Nd1;
+                rho = K * T * Math.exp(-r * T) * Nd2 / 100;
+            } else {
+                price = K * Math.exp(-r * T) * Nmd2 - S * Nmd1;
+                delta = Nd1 - 1;
+                rho = -K * T * Math.exp(-r * T) * Nmd2 / 100;
+            }
+
+            const gamma = nd1 / (S * sigma * Math.sqrt(T));
+            const vega = S * nd1 * Math.sqrt(T) / 100;
+            
+            const theta_part1 = -(S * nd1 * sigma) / (2 * Math.sqrt(T));
+            if (isCall) {
+                const theta = (theta_part1 - r * K * Math.exp(-r * T) * Nd2) / 365;
+                return { price, delta, gamma, theta, vega, rho };
+            } else {
+                const theta = (theta_part1 + r * K * Math.exp(-r * T) * Nmd2) / 365;
+                return { price, delta, gamma, theta, vega, rho };
+            }
+        }
+
+        function getParams() {
+            return {
+                S: parseFloat(document.getElementById('spot-price').value),
+                K: parseFloat(document.getElementById('strike-price').value),
+                T: parseFloat(document.getElementById('time-to-expiry').value),
+                r: parseFloat(document.getElementById('risk-free-rate').value) / 100,
+                sigma: parseFloat(document.getElementById('volatility').value) / 100
+            };
+        }
+
+        function calculate() {
+            const { S, K, T, r, sigma } = getParams();
+            const isCall = optionType === 'call';
+
+            if (isNaN(S) || isNaN(K) || isNaN(T) || isNaN(r) || isNaN(sigma)) return;
+
+            const result = blackScholes(S, K, T, r, sigma, isCall);
+
+            document.getElementById('option-price').textContent = `$${result.price.toFixed(2)}`;
+            document.getElementById('delta').textContent = result.delta.toFixed(4);
+            document.getElementById('gamma').textContent = result.gamma.toFixed(4);
+            document.getElementById('theta').textContent = result.theta.toFixed(4);
+            document.getElementById('vega').textContent = result.vega.toFixed(4);
+            document.getElementById('rho').textContent = result.rho.toFixed(4);
+
+            drawCharts(S, K, T, r, sigma, isCall);
+        }
+
+        function drawCharts(S, K, T, r, sigma, isCall) {
+            // Generate stock price range
+            const minS = Math.max(1, S * 0.5);
+            const maxS = S * 1.5;
+            const stockPrices = [];
+            const optionPrices = [];
+            const payoffs = [];
+            const deltas = [];
+
+            for (let s = minS; s <= maxS; s += (maxS - minS) / 100) {
+                stockPrices.push(s);
+                const res = blackScholes(s, K, T, r, sigma, isCall);
+                optionPrices.push(res.price);
+                deltas.push(res.delta);
+                
+                const payoff = isCall ? Math.max(s - K, 0) : Math.max(K - s, 0);
+                payoffs.push(payoff);
+            }
+
+            // Price chart
+            const priceTrace = {
+                x: stockPrices,
+                y: optionPrices,
+                mode: 'lines',
+                name: 'Option Value',
+                line: { color: '#00d4aa', width: 2 }
+            };
+
+            const payoffTrace = {
+                x: stockPrices,
+                y: payoffs,
+                mode: 'lines',
+                name: 'Payoff at Expiry',
+                line: { color: '#ff6b35', width: 2, dash: 'dash' }
+            };
+
+            const currentPriceTrace = {
+                x: [S],
+                y: [blackScholes(S, K, T, r, sigma, isCall).price],
+                mode: 'markers',
+                name: 'Current',
+                marker: { color: '#ffffff', size: 10, line: { color: '#00d4aa', width: 2 } }
+            };
+
+            const priceLayout = {
+                paper_bgcolor: '#111920',
+                plot_bgcolor: '#111920',
+                margin: { l: 50, r: 20, t: 10, b: 40 },
+                xaxis: {
+                    title: { text: 'Stock Price', font: { color: '#5a6b7a', size: 11 } },
+                    tickfont: { color: '#5a6b7a', family: 'IBM Plex Mono', size: 10 },
+                    gridcolor: '#1a242d',
+                    zerolinecolor: '#2a3a4a'
+                },
+                yaxis: {
+                    title: { text: 'Value ($)', font: { color: '#5a6b7a', size: 11 } },
+                    tickfont: { color: '#5a6b7a', family: 'IBM Plex Mono', size: 10 },
+                    gridcolor: '#1a242d',
+                    zerolinecolor: '#2a3a4a'
+                },
+                legend: {
+                    x: 0.02, y: 0.98,
+                    font: { color: '#8a9bab', size: 10 },
+                    bgcolor: 'rgba(17,25,32,0.8)'
+                },
+                showlegend: true
+            };
+
+            Plotly.newPlot('price-chart', [priceTrace, payoffTrace, currentPriceTrace], priceLayout, { responsive: true, displayModeBar: false });
+
+            // Delta chart
+            const deltaTrace = {
+                x: stockPrices,
+                y: deltas,
+                mode: 'lines',
+                name: 'Delta',
+                line: { color: '#00d4aa', width: 2 },
+                fill: 'tozeroy',
+                fillcolor: 'rgba(0, 212, 170, 0.1)'
+            };
+
+            const currentDeltaTrace = {
+                x: [S],
+                y: [blackScholes(S, K, T, r, sigma, isCall).delta],
+                mode: 'markers',
+                name: 'Current',
+                marker: { color: '#ffffff', size: 10, line: { color: '#00d4aa', width: 2 } }
+            };
+
+            const deltaLayout = {
+                paper_bgcolor: '#111920',
+                plot_bgcolor: '#111920',
+                margin: { l: 50, r: 20, t: 10, b: 40 },
+                xaxis: {
+                    title: { text: 'Stock Price', font: { color: '#5a6b7a', size: 11 } },
+                    tickfont: { color: '#5a6b7a', family: 'IBM Plex Mono', size: 10 },
+                    gridcolor: '#1a242d',
+                    zerolinecolor: '#2a3a4a'
+                },
+                yaxis: {
+                    title: { text: 'Delta', font: { color: '#5a6b7a', size: 11 } },
+                    tickfont: { color: '#5a6b7a', family: 'IBM Plex Mono', size: 10 },
+                    gridcolor: '#1a242d',
+                    zerolinecolor: '#2a3a4a',
+                    range: isCall ? [-0.1, 1.1] : [-1.1, 0.1]
+                },
+                showlegend: false
+            };
+
+            Plotly.newPlot('delta-chart', [deltaTrace, currentDeltaTrace], deltaLayout, { responsive: true, displayModeBar: false });
+        }
+
+        // Live updates
+        document.querySelectorAll('input:not(#market-price)').forEach(input => {
+            input.addEventListener('input', calculate);
+        });
+
+        // IV calculation on Enter
+        document.getElementById('market-price').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                calculateIV();
+            }
+        });
+
+        // Implied Volatility using Newton-Raphson
+        function calculateIV() {
+            const { S, K, T, r } = getParams();
+            const marketPrice = parseFloat(document.getElementById('market-price').value);
+            const isCall = optionType === 'call';
+            const ivDisplay = document.getElementById('implied-vol');
+
+            if (isNaN(marketPrice) || marketPrice <= 0) {
+                ivDisplay.textContent = 'Enter valid price';
+                ivDisplay.classList.add('error');
+                return;
+            }
+
+            // Check bounds
+            const intrinsic = isCall ? Math.max(S - K * Math.exp(-r * T), 0) : Math.max(K * Math.exp(-r * T) - S, 0);
+            const maxPrice = isCall ? S : K * Math.exp(-r * T);
+
+            if (marketPrice < intrinsic) {
+                ivDisplay.textContent = 'Price below intrinsic';
+                ivDisplay.classList.add('error');
+                return;
+            }
+
+            if (marketPrice >= maxPrice) {
+                ivDisplay.textContent = 'Price too high';
+                ivDisplay.classList.add('error');
+                return;
+            }
+
+            // Newton-Raphson iteration
+            let sigma = 0.2; // Initial guess
+            const tolerance = 1e-6;
+            const maxIterations = 100;
+
+            for (let i = 0; i < maxIterations; i++) {
+                const result = blackScholes(S, K, T, r, sigma, isCall);
+                const price = result.price;
+                const vega = result.vega * 100; // Undo the /100 in the vega calculation
+
+                const diff = price - marketPrice;
+
+                if (Math.abs(diff) < tolerance) {
+                    ivDisplay.textContent = (sigma * 100).toFixed(2) + '%';
+                    ivDisplay.classList.remove('error');
+                    return;
+                }
+
+                if (vega < 1e-10) {
+                    // Vega too small, use bisection fallback
+                    break;
+                }
+
+                sigma = sigma - diff / vega;
+
+                // Keep sigma in reasonable bounds
+                if (sigma <= 0.001) sigma = 0.001;
+                if (sigma > 5) sigma = 5;
+            }
+
+            // Bisection fallback
+            let low = 0.001;
+            let high = 5.0;
+
+            for (let i = 0; i < maxIterations; i++) {
+                const mid = (low + high) / 2;
+                const result = blackScholes(S, K, T, r, mid, isCall);
+                const price = result.price;
+
+                if (Math.abs(price - marketPrice) < tolerance) {
+                    ivDisplay.textContent = (mid * 100).toFixed(2) + '%';
+                    ivDisplay.classList.remove('error');
+                    return;
+                }
+
+                if (price > marketPrice) {
+                    high = mid;
+                } else {
+                    low = mid;
+                }
+            }
+
+            ivDisplay.textContent = 'No solution found';
+            ivDisplay.classList.add('error');
+        }
+
+        // Initialize
+        function init() {
+            if (typeof Plotly !== 'undefined') {
+                calculate();
+            } else {
+                setTimeout(init, 150);
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', function() {
+            setTimeout(init, 100);
+        });
+    </script>
+</body>
+</html>
