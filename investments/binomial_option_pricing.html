@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binomial Option Pricing Model</title>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <script>
+        if (typeof Plotly === 'undefined') {
+            document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.27.0/plotly.min.js"><\/script>');
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0f14;
+            --bg-secondary: #111920;
+            --bg-tertiary: #1a242d;
+            --accent-cyan: #00d4aa;
+            --accent-orange: #ff6b35;
+            --accent-blue: #4a9eff;
+            --text-primary: #e8edf2;
+            --text-secondary: #8a9bab;
+            --text-muted: #5a6b7a;
+            --border-color: #2a3a4a;
+            --call-color: #00d4aa;
+            --put-color: #ff6b35;
+            --exercise-color: #ffd93d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .app-container {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            min-height: 100vh;
+        }
+
+        .control-panel {
+            background: var(--bg-secondary);
+            border-right: 1px solid var(--border-color);
+            padding: 24px;
+            overflow-y: auto;
+            max-height: 100vh;
+        }
+
+        .panel-header {
+            margin-bottom: 28px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .panel-header h1 {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--accent-cyan);
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+        }
+
+        .panel-header p {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .section {
+            margin-bottom: 24px;
+        }
+
+        .section-title {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            margin-bottom: 14px;
+        }
+
+        .toggle-group {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .toggle-btn {
+            flex: 1;
+            padding: 10px 16px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-tertiary);
+            color: var(--text-secondary);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-radius: 4px;
+        }
+
+        .toggle-btn:hover {
+            border-color: var(--text-muted);
+        }
+
+        .toggle-btn.active {
+            background: var(--accent-cyan);
+            border-color: var(--accent-cyan);
+            color: var(--bg-primary);
+        }
+
+        .toggle-btn.active.put {
+            background: var(--accent-orange);
+            border-color: var(--accent-orange);
+        }
+
+        .input-group {
+            margin-bottom: 14px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px 12px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            color: var(--text-primary);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 13px;
+            transition: border-color 0.2s ease;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--accent-cyan);
+        }
+
+        .input-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .calculate-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, var(--accent-cyan), #00a88a);
+            border: none;
+            border-radius: 6px;
+            color: var(--bg-primary);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .calculate-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(0, 212, 170, 0.3);
+        }
+
+        .results-summary {
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+        }
+
+        .result-label {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .result-value {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent-cyan);
+        }
+
+        .result-value.premium {
+            font-size: 18px;
+            color: var(--text-primary);
+        }
+
+        .viz-panel {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .viz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .viz-title {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .legend {
+            display: flex;
+            gap: 20px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11px;
+            color: var(--text-secondary);
+        }
+
+        .legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .legend-dot.stock {
+            background: var(--accent-blue);
+        }
+
+        .legend-dot.option {
+            background: var(--accent-cyan);
+        }
+
+        .legend-dot.exercise {
+            background: var(--exercise-color);
+            box-shadow: 0 0 8px var(--exercise-color);
+        }
+
+        #tree-chart {
+            flex: 1;
+            min-height: 600px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 1024px) {
+            .app-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .control-panel {
+                max-height: none;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div class="control-panel">
+            <div class="panel-header">
+                <h1>Binomial Tree Model</h1>
+                <p>Interactive Option Pricing Visualization</p>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Option Type</div>
+                <div class="toggle-group">
+                    <button class="toggle-btn active" id="call-btn" onclick="setOptionType('call')">Call</button>
+                    <button class="toggle-btn" id="put-btn" onclick="setOptionType('put')">Put</button>
+                </div>
+                <div class="toggle-group">
+                    <button class="toggle-btn active" id="european-btn" onclick="setStyle('european')">European</button>
+                    <button class="toggle-btn" id="american-btn" onclick="setStyle('american')">American</button>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Market Parameters</div>
+                <div class="input-group">
+                    <label>Initial Stock Price ($)</label>
+                    <input type="number" id="spot-price" value="100" step="0.01">
+                </div>
+                <div class="input-group">
+                    <label>Strike Price ($)</label>
+                    <input type="number" id="strike-price" value="100" step="0.01">
+                </div>
+                <div class="input-group">
+                    <label>Risk-Free Rate (%)</label>
+                    <input type="number" id="risk-free-rate" value="5" step="0.1">
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Tree Parameters</div>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label>Up Move (%)</label>
+                        <input type="number" id="up-move" value="10" step="0.1">
+                    </div>
+                    <div class="input-group">
+                        <label>Down Move (%)</label>
+                        <input type="number" id="down-move" value="10" step="0.1">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Number of Steps (max 30)</label>
+                    <input type="number" id="num-steps" value="5" min="1" max="30">
+                </div>
+            </div>
+
+            <button class="calculate-btn" onclick="calculate()">Calculate & Draw Tree</button>
+
+            <div class="results-summary" id="results-summary" style="display: none;">
+                <div class="section-title">Results</div>
+                <div class="result-item">
+                    <span class="result-label">Option Premium</span>
+                    <span class="result-value premium" id="option-premium">-</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Risk-Neutral Prob (p)</span>
+                    <span class="result-value" id="risk-neutral-p">-</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Delta (at t=0)</span>
+                    <span class="result-value" id="delta-value">-</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="viz-panel">
+            <div class="viz-header">
+                <span class="viz-title">Binomial Tree Visualization</span>
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="legend-dot option"></div>
+                        <span>Option Value</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot exercise"></div>
+                        <span>Early Exercise</span>
+                    </div>
+                </div>
+            </div>
+            <div id="tree-chart"></div>
+        </div>
+    </div>
+
+    <script>
+        let optionType = 'call';
+        let optionStyle = 'european';
+
+        function setOptionType(type) {
+            optionType = type;
+            document.getElementById('call-btn').classList.toggle('active', type === 'call');
+            document.getElementById('put-btn').classList.toggle('active', type === 'put');
+            document.getElementById('call-btn').classList.remove('put');
+            document.getElementById('put-btn').classList.remove('put');
+            if (type === 'put') {
+                document.getElementById('put-btn').classList.add('put');
+            }
+            calculate();
+        }
+
+        function setStyle(style) {
+            optionStyle = style;
+            document.getElementById('european-btn').classList.toggle('active', style === 'european');
+            document.getElementById('american-btn').classList.toggle('active', style === 'american');
+            calculate();
+        }
+
+        function getParams() {
+            const S0 = parseFloat(document.getElementById('spot-price').value);
+            const K = parseFloat(document.getElementById('strike-price').value);
+            const r = parseFloat(document.getElementById('risk-free-rate').value) / 100;
+            const u = 1 + parseFloat(document.getElementById('up-move').value) / 100;
+            const d = 1 - parseFloat(document.getElementById('down-move').value) / 100;
+            let N = parseInt(document.getElementById('num-steps').value);
+            N = Math.min(Math.max(N, 1), 30);
+            return { S0, K, r, u, d, N };
+        }
+
+        function buildStockTree(S0, u, d, N) {
+            // stockTree[t][j] = stock price at time t with j up moves
+            const stockTree = [];
+            for (let t = 0; t <= N; t++) {
+                stockTree[t] = [];
+                for (let j = 0; j <= t; j++) {
+                    stockTree[t][j] = S0 * Math.pow(u, j) * Math.pow(d, t - j);
+                }
+            }
+            return stockTree;
+        }
+
+        function priceOption(stockTree, K, r, u, d, N, isCall, isAmerican) {
+            const dt = 1;
+            const R = Math.exp(r * dt);
+            const p = (R - d) / (u - d);
+            const discount = Math.exp(-r * dt);
+
+            const optionTree = [];
+            const exerciseTree = [];
+
+            for (let t = 0; t <= N; t++) {
+                optionTree[t] = [];
+                exerciseTree[t] = [];
+                for (let j = 0; j <= t; j++) {
+                    exerciseTree[t][j] = false;
+                }
+            }
+
+            // Terminal payoffs
+            for (let j = 0; j <= N; j++) {
+                const S = stockTree[N][j];
+                optionTree[N][j] = isCall ? Math.max(S - K, 0) : Math.max(K - S, 0);
+            }
+
+            // Backward induction
+            for (let t = N - 1; t >= 0; t--) {
+                for (let j = 0; j <= t; j++) {
+                    const cont = discount * (p * optionTree[t + 1][j + 1] + (1 - p) * optionTree[t + 1][j]);
+                    
+                    if (isAmerican) {
+                        const S = stockTree[t][j];
+                        const exerciseValue = isCall ? Math.max(S - K, 0) : Math.max(K - S, 0);
+                        
+                        if (exerciseValue > cont + 1e-10) {
+                            optionTree[t][j] = exerciseValue;
+                            exerciseTree[t][j] = true;
+                        } else {
+                            optionTree[t][j] = cont;
+                        }
+                    } else {
+                        optionTree[t][j] = cont;
+                    }
+                }
+            }
+
+            // Delta
+            let delta = 0;
+            if (N >= 1) {
+                const Su = stockTree[1][1];
+                const Sd = stockTree[1][0];
+                const Ou = optionTree[1][1];
+                const Od = optionTree[1][0];
+                delta = (Ou - Od) / (Su - Sd);
+            }
+
+            return { optionTree, exerciseTree, p, delta };
+        }
+
+        function drawTree(stockTree, optionTree, exerciseTree, N) {
+            const nodes = [];
+            const edges = [];
+
+            // Build nodes and edges for recombining tree
+            for (let t = 0; t <= N; t++) {
+                for (let j = 0; j <= t; j++) {
+                    const x = t;
+                    const y = j - t / 2;  // Center vertically, up moves go up
+                    
+                    nodes.push({
+                        x, y, t, j,
+                        stock: stockTree[t][j],
+                        option: optionTree[t][j],
+                        exercise: exerciseTree[t][j]
+                    });
+
+                    if (t < N) {
+                        // Edge to up node (j+1 at t+1)
+                        edges.push({
+                            x0: x, y0: y,
+                            x1: t + 1, y1: (j + 1) - (t + 1) / 2
+                        });
+                        // Edge to down node (j at t+1)
+                        edges.push({
+                            x0: x, y0: y,
+                            x1: t + 1, y1: j - (t + 1) / 2
+                        });
+                    }
+                }
+            }
+
+            // Combine edges into single trace
+            const edgeX = [];
+            const edgeY = [];
+            for (const edge of edges) {
+                edgeX.push(edge.x0, edge.x1, null);
+                edgeY.push(edge.y0, edge.y1, null);
+            }
+
+            const edgeTrace = {
+                x: edgeX,
+                y: edgeY,
+                mode: 'lines',
+                line: { color: '#2a3a4a', width: 1 },
+                hoverinfo: 'skip',
+                showlegend: false
+            };
+
+            const regularNodes = nodes.filter(n => !n.exercise);
+            const exerciseNodes = nodes.filter(n => n.exercise);
+
+            const markerSize = Math.max(8, 20 - N * 0.4);
+
+            const regularTrace = {
+                x: regularNodes.map(n => n.x),
+                y: regularNodes.map(n => n.y),
+                mode: 'markers',
+                marker: {
+                    size: markerSize,
+                    color: regularNodes.map(n => n.option),
+                    colorscale: [
+                        [0, '#1a242d'],
+                        [0.5, '#00a88a'],
+                        [1, '#00d4aa']
+                    ],
+                    line: { color: '#00d4aa', width: 1 }
+                },
+                text: regularNodes.map(n => 
+                    `<b>Step ${n.t}, State ${n.j}</b><br>` +
+                    `Stock: $${n.stock.toFixed(2)}<br>` +
+                    `Option: $${n.option.toFixed(2)}`
+                ),
+                hovertemplate: '%{text}<extra></extra>',
+                showlegend: false
+            };
+
+            const exerciseTrace = {
+                x: exerciseNodes.map(n => n.x),
+                y: exerciseNodes.map(n => n.y),
+                mode: 'markers',
+                marker: {
+                    size: markerSize + 2,
+                    color: '#ffd93d',
+                    symbol: 'diamond',
+                    line: { color: '#ffaa00', width: 2 }
+                },
+                text: exerciseNodes.map(n => 
+                    `<b>Step ${n.t}, State ${n.j}</b><br>` +
+                    `Stock: $${n.stock.toFixed(2)}<br>` +
+                    `Option: $${n.option.toFixed(2)}<br>` +
+                    `<b>⚡ EARLY EXERCISE</b>`
+                ),
+                hovertemplate: '%{text}<extra></extra>',
+                showlegend: false
+            };
+
+            const data = [edgeTrace, regularTrace];
+            if (exerciseNodes.length > 0) {
+                data.push(exerciseTrace);
+            }
+
+            const layout = {
+                paper_bgcolor: '#111920',
+                plot_bgcolor: '#111920',
+                margin: { l: 40, r: 40, t: 40, b: 40 },
+                xaxis: {
+                    title: { text: 'Time Step', font: { color: '#5a6b7a', size: 12 } },
+                    tickfont: { color: '#5a6b7a', family: 'IBM Plex Mono' },
+                    gridcolor: '#1a242d',
+                    zerolinecolor: '#2a3a4a',
+                    dtick: N <= 15 ? 1 : Math.ceil(N / 15)
+                },
+                yaxis: {
+                    title: { text: 'Price Level', font: { color: '#5a6b7a', size: 12 } },
+                    tickfont: { color: '#5a6b7a', family: 'IBM Plex Mono' },
+                    gridcolor: '#1a242d',
+                    zerolinecolor: '#2a3a4a'
+                },
+                hoverlabel: {
+                    bgcolor: '#1a242d',
+                    bordercolor: '#2a3a4a',
+                    font: { family: 'IBM Plex Mono', color: '#e8edf2', size: 12 }
+                },
+                showlegend: false
+            };
+
+            const config = {
+                responsive: true,
+                displayModeBar: true,
+                modeBarButtonsToRemove: ['lasso2d', 'select2d'],
+                displaylogo: false
+            };
+
+            Plotly.newPlot('tree-chart', data, layout, config);
+        }
+
+        function calculate() {
+            const { S0, K, r, u, d, N } = getParams();
+            
+            if (isNaN(S0) || isNaN(K) || isNaN(r) || isNaN(u) || isNaN(d) || isNaN(N)) {
+                alert('Please enter valid numbers for all parameters');
+                return;
+            }
+
+            if (u <= d) {
+                alert('Up move must be greater than down move');
+                return;
+            }
+
+            const stockTree = buildStockTree(S0, u, d, N);
+            const isCall = optionType === 'call';
+            const isAmerican = optionStyle === 'american';
+            const { optionTree, exerciseTree, p, delta } = priceOption(stockTree, K, r, u, d, N, isCall, isAmerican);
+
+            document.getElementById('results-summary').style.display = 'block';
+            document.getElementById('option-premium').textContent = `$${optionTree[0][0].toFixed(4)}`;
+            document.getElementById('risk-neutral-p').textContent = p.toFixed(4);
+            document.getElementById('delta-value').textContent = delta.toFixed(4);
+
+            drawTree(stockTree, optionTree, exerciseTree, N);
+        }
+
+        // Add input listeners for live updates
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('change', calculate);
+        });
+
+        function init() {
+            if (typeof Plotly !== 'undefined') {
+                calculate();
+            } else {
+                setTimeout(init, 100);
+            }
+        }
+        
+        if (document.readyState === 'complete') {
+            init();
+        } else {
+            window.addEventListener('load', init);
+        }
+    </script>
+</body>
+</html>
