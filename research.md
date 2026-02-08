@@ -140,6 +140,9 @@ _OR Spectrum_, (2010), 32, 49-60.
 
 
 ### <a id="wp"></a>Working Paper ###
+**International Investing: Diversification and Beyond**  with [Soohun Kim](https://soohunkimi.github.io/myWebpage/) and [Robert Korajczyk](https://www.kellogg.northwestern.edu/faculty/directory/korajczyk_robert.aspx){:target="_blank"}  
+[[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5767162){:target="_blank"}
+
 **The Uncertainty of Machine Learning Predictions in Asset Pricing**  with [Yuan Liao](https://econweb.rutgers.edu/yl1114/){:target="_blank"}, [Xinjie Ma](https://xinjiema.super.site){:target="_blank"} and [Linda Schilling](https://sites.google.com/view/lindamarleneschilling/home){:target="_blank"}   
 [[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5160731){:target="_blank"}
 
