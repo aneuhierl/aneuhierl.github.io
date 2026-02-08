@@ -28,4 +28,4 @@ permalink: /teaching/
 
 * **MNA 70210** -- Financial Management  (Summer 2019)
 
-* **FINC 30600** -- Investment Theory   (Fall 2015, 2016, 2018*)
+* **FINC 30600** -- Investment Theory   (Fall 2015, 2016, 2018)
