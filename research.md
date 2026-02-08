@@ -143,19 +143,19 @@ _OR Spectrum_, (2010), 32, 49-60.
 **International Investing: Diversification and Beyond**  with [Soohun Kim](https://soohunkimi.github.io/myWebpage/) and [Robert Korajczyk](https://www.kellogg.northwestern.edu/faculty/directory/korajczyk_robert.aspx){:target="_blank"}  
 [[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5767162){:target="_blank"}
 
-**The Uncertainty of Machine Learning Predictions in Asset Pricing**  with [Yuan Liao](https://econweb.rutgers.edu/yl1114/){:target="_blank"}, [Xinjie Ma](https://xinjiema.super.site){:target="_blank"} and [Linda Schilling](https://sites.google.com/view/lindamarleneschilling/home){:target="_blank"}   
+**The Uncertainty of Machine Learning Predictions in Asset Pricing**  with [Yuan Liao](https://pliaoxp.github.io/){:target="_blank"}, [Xinjie Ma](https://xinjiema.super.site){:target="_blank"} and [Linda Schilling](https://sites.google.com/view/lindamarleneschilling/home){:target="_blank"}   
 [[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5160731){:target="_blank"}
 
-**Does Noise Hurt Economic Forecasts?**  with [Yuan Liao](https://econweb.rutgers.edu/yl1114/){:target="_blank"}, [Xinjie Ma](https://xinjiema.super.site){:target="_blank"} and [Zhentao Shi](http://zhentaoshi.github.io){:target="_blank"}   
+**Does Noise Hurt Economic Forecasts?**  with [Yuan Liao](https://pliaoxp.github.io/){:target="_blank"}, [Xinjie Ma](https://xinjiema.super.site){:target="_blank"} and [Zhentao Shi](http://zhentaoshi.github.io){:target="_blank"}   
 [[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4659309){:target="_blank"}
 
 **Timing the Factor Zoo**  with [Otto Randl](https://sites.google.com/site/ottorandl/){:target="_blank"}, [Christoph Reschenhofer](https://www.christophreschenhofer.com/home){:target="_blank"} and [Josef Zechner](https://www.vgsf.ac.at/faculty/vgsf-faculty/josef-zechner/){:target="_blank"}   
 [[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4376898){:target="_blank"}
 
-**Robust Stock Index Return Predictions Using Deep Learning**  with [Ravi Jagannathan](https://www.kellogg.northwestern.edu/faculty/directory/jagannathan_ravi.aspx){:target="_blank"} and [Yuan Liao](https://econweb.rutgers.edu/yl1114/){:target="_blank"}  
+**Robust Stock Index Return Predictions Using Deep Learning**  with [Ravi Jagannathan](https://www.kellogg.northwestern.edu/faculty/directory/jagannathan_ravi.aspx){:target="_blank"} and [Yuan Liao](https://pliaoxp.github.io/){:target="_blank"}  
 [[SSRN]]([https://www.ssrn.com](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4890466)){:target="_blank"}
 
-**Structural Deep Learning in Conditional Asset Pricing**  with [Jianqing Fan](https://fan.princeton.edu){:target="_blank"}, [Tracy Ke](https://zke.fas.harvard.edu){:target="_blank"} and [Yuan Liao](https://econweb.rutgers.edu/yl1114/){:target="_blank"}  
+**Structural Deep Learning in Conditional Asset Pricing**  with [Jianqing Fan](https://fan.princeton.edu){:target="_blank"}, [Tracy Ke](https://zke.fas.harvard.edu){:target="_blank"} and [Yuan Liao](https://pliaoxp.github.io/){:target="_blank"}  
 [[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4117882){:target="_blank"}
   
 **Inferences About Properties of Earnings With Disappearing Data**  with [Peter Easton](https://mendoza.nd.edu/mendoza-directory/profile/?slug=peter-easton){:target="_blank"}, [Martin Kapons](https://research.tilburguniversity.edu/en/persons/martin-kapons){:target="_blank"} and [Peter Kelly](https://sites.google.com/a/alumni.nd.edu/peter/research){:target="_blank"}  
