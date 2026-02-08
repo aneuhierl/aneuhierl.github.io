@@ -4,6 +4,12 @@ title: Teaching
 permalink: /teaching/
 ---
 
+### Purdue University, Mitch Daniel School of Business
+
+* **MGMT 411** -- Investment Management
+  *Fall 2025*
+
+
 ### Washington University in St. Louis, Olin School of Business
 
 * **FIN 532**  -- Investment Theory
