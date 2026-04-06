@@ -88,9 +88,10 @@ published: true
 _Management Science_, accepted for publication.     
 [[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3795486){:target="_blank"}
 
-**Missing Data in Asset Pricing Panels** with [Joachim Freyberger](https://sites.google.com/view/joachimfreyberger/home){:target="_blank"} and Bjoern Hoeppner and [Michael Weber](https://faculty.chicagobooth.edu/michael-weber/){:target="_blank"}      
-_Review of Financial Studies_, accepted for publication.    
+**Missing Data in Asset Pricing Panels** with [Joachim Freyberger](https://sites.google.com/view/joachimfreyberger/home){:target="_blank"} and [Bjoern Hoeppner](https://sites.google.com/view/bjoernhoeppner){:target="_blank"} and [Michael Weber](https://faculty.chicagobooth.edu/michael-weber/){:target="_blank"}      
+_Review of Financial Studies_, (2025), 38, 760–802.
 [[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3932438){:target="_blank"}
+[[RFS]](https://doi.org/10.1093/rfs/hhae003){:target="_blank"}
 
 **Arbitrage Portfolios**  with [Soohun Kim](https://soohunkimi.github.io/myWebpage/) and [Robert Korajczyk](https://www.kellogg.northwestern.edu/faculty/directory/korajczyk_robert.aspx){:target="_blank"}  
 _Review of Financial Studies_, (2021), 34, 2813–2856.  
