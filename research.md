@@ -141,13 +141,16 @@ _OR Spectrum_, (2010), 32, 49-60.
 
 
 ### <a id="wp"></a>Working Paper ###
+**Is Expected Market Volatility a Priced Risk Factor?**  with [[Yuan Liao](https://pliaoxp.github.io/){:target="_blank"} and [Viktor Todorov](https://sites.google.com/view/viktor-todorov){:target="_blank"}  
+[[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6939978){:target="_blank"}
+
 **International Investing: Diversification and Beyond**  with [Soohun Kim](https://soohunkimi.github.io/myWebpage/) and [Robert Korajczyk](https://www.kellogg.northwestern.edu/faculty/directory/korajczyk_robert.aspx){:target="_blank"}  
 [[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5767162){:target="_blank"}
 
 **The Uncertainty of Machine Learning Predictions in Asset Pricing**  with [Yuan Liao](https://pliaoxp.github.io/){:target="_blank"}, [Xinjie Ma](https://xinjiema.super.site){:target="_blank"} and [Linda Schilling](https://sites.google.com/view/lindamarleneschilling/home){:target="_blank"}   
 [[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5160731){:target="_blank"}
 
-**Does Noise Hurt Economic Forecasts?**  with [Yuan Liao](https://pliaoxp.github.io/){:target="_blank"}, [Xinjie Ma](https://xinjiema.super.site){:target="_blank"} and [Zhentao Shi](http://zhentaoshi.github.io){:target="_blank"}   
+**Benign Overfitting in Economic Forecasting via Noise Regularization**  with [Yuan Liao](https://pliaoxp.github.io/){:target="_blank"}, [Xinjie Ma](https://xinjiema.super.site){:target="_blank"} and [Zhentao Shi](http://zhentaoshi.github.io){:target="_blank"}   
 [[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4659309){:target="_blank"}
 
 **Timing the Factor Zoo**  with [Otto Randl](https://sites.google.com/site/ottorandl/){:target="_blank"}, [Christoph Reschenhofer](https://www.christophreschenhofer.com/home){:target="_blank"} and [Josef Zechner](https://www.vgsf.ac.at/faculty/vgsf-faculty/josef-zechner/){:target="_blank"}   
