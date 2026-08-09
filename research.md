@@ -141,7 +141,7 @@ _OR Spectrum_, (2010), 32, 49-60.
 
 
 ### <a id="wp"></a>Working Paper ###
-**Is Expected Market Volatility a Priced Risk Factor?**  with [[Yuan Liao](https://pliaoxp.github.io/){:target="_blank"} and [Viktor Todorov](https://sites.google.com/view/viktor-todorov){:target="_blank"}  
+**Is Expected Market Volatility a Priced Risk Factor?**  with [Yuan Liao](https://pliaoxp.github.io/){:target="_blank"} and [Viktor Todorov](https://sites.google.com/view/viktor-todorov){:target="_blank"}  
 [[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6939978){:target="_blank"}
 
 **International Investing: Diversification and Beyond**  with [Soohun Kim](https://soohunkimi.github.io/myWebpage/) and [Robert Korajczyk](https://www.kellogg.northwestern.edu/faculty/directory/korajczyk_robert.aspx){:target="_blank"}  
