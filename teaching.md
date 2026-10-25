@@ -4,6 +4,10 @@ title: Teaching
 permalink: /teaching/
 ---
 
+### Teaching Materials
+
+* [Interactive investments tools](/investments/): portfolio choice with two or more risky assets, fund separation, option payoffs, binomial trees and Black-Scholes-Merton
+
 ### Purdue University, Mitch Daniels School of Business
 
 * **FIN 43800** -- Machine Learning in Finance (Fall 2026)

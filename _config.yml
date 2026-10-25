@@ -1,6 +1,5 @@
 title: Andreas Neuhierl
 description: Andreas Neuhierl's webpage
-sourcecode: ""
 
 permalink: blog/:year/:month/:day/:title
 exclude: ["Makefile", "README.md"]
