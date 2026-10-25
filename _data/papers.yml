@@ -251,6 +251,18 @@
   abstract:
   topics: []
 
+- title: "Accounting Under Pressure: Recognition Rules, Insurer Bond Sales, and Real Investment"
+  status: working
+  coauthors:
+    - {name: "John Manuel Barrios", url: "https://johnmbarrios.com/research.html"}
+    - {name: "Linda Schilling", url: "https://sites.google.com/view/lindamarleneschilling/home"}
+  rr_journal:
+  links:
+    ssrn: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5337889"
+  takeaway:
+  abstract:
+  topics: []
+
 - title: "The Uncertainty of Machine Learning Predictions in Asset Pricing"
   status: working
   coauthors:
