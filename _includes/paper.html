@@ -1,0 +1,37 @@
+{%- comment -%} One paper entry. Usage: {% include paper.html paper=paper %} (data: _data/papers.yml) {%- endcomment -%}
+{%- assign p = include.paper -%}
+{%- capture links -%}
+{%- if p.links.ssrn %} <a href="{{ p.links.ssrn }}" target="_blank" rel="noopener">[SSRN]</a>{% endif -%}
+{%- if p.links.journal %} <a href="{{ p.links.journal }}" target="_blank" rel="noopener">[{{ p.journal_abbr | default: "Journal" }}]</a>{% endif -%}
+{%- if p.links.code %} <a href="{{ p.links.code }}" target="_blank" rel="noopener">[Code]</a>{% endif -%}
+{%- if p.links.data %} <a href="{{ p.links.data }}" target="_blank" rel="noopener">[Data]</a>{% endif -%}
+{%- if p.links.slides %} <a href="{{ p.links.slides }}" target="_blank" rel="noopener">[Slides]</a>{% endif -%}
+{%- if p.links.appendix %} <a href="{{ p.links.appendix }}" target="_blank" rel="noopener">[Appendix]</a>{% endif -%}
+{%- if p.links.video %} <a href="{{ p.links.video }}" target="_blank" rel="noopener">[Video]</a>{% endif -%}
+{%- endcapture -%}
+{%- assign links = links | strip -%}
+<div class="paper">
+<p><strong>{{ p.title }}</strong>
+{%- if p.coauthors.size > 0 %} with {% for c in p.coauthors -%}
+{%- unless forloop.first -%}{%- if forloop.last %} and {% else %}, {% endif -%}{%- endunless -%}
+{%- if c.url -%}<a href="{{ c.url }}" target="_blank" rel="noopener">{{ c.name }}</a>{%- else -%}{{ c.name }}{%- endif -%}
+{%- endfor -%}
+{%- endif -%}
+{%- if p.status == "published" -%}<br />
+<em>{{ p.journal }}</em>, ({{ p.year }}), {{ p.volume }}, {{ p.pages }}.
+{%- elsif p.status == "accepted" -%}<br />
+<em>{{ p.journal }}</em>, accepted for publication.
+{%- elsif p.status == "rr" and site.show_rr_status -%}<br />
+Revise and resubmit, <em>{{ p.rr_journal }}</em>
+{%- endif -%}
+{%- if links != "" -%}<br />
+{{ links }}
+{%- endif -%}
+</p>
+{%- if p.takeaway %}
+<p class="paper-takeaway"><em>{{ p.takeaway }}</em></p>
+{%- endif -%}
+{%- if p.abstract %}
+<details class="paper-abstract"><summary>Abstract</summary><p>{{ p.abstract }}</p></details>
+{%- endif %}
+</div>

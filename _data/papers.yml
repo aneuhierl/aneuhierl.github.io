@@ -1,0 +1,351 @@
+# All papers shown on the Research page. The page is generated from this file.
+#
+# status:      published | accepted | rr | working
+#              published/accepted -> "Published and Accepted Papers"; rr/working -> "Working Paper"
+# Order:       papers appear on the page in the order they appear here (newest first).
+#              When a paper is accepted: set status to accepted (or published and add year/volume/pages),
+#              fill in journal and journal_abbr, and move the block to the top of the published papers.
+# coauthors:   url is optional.
+# journal_abbr: label of the journal link, e.g. [RFS].
+# links:       optional keys, shown in this order: ssrn, journal, code, data, slides, appendix, video.
+# rr_journal:  recorded for working papers; shown only if show_rr_status is true in _config.yml.
+# takeaway, abstract, topics: optional; shown only when filled in.
+
+# ---------------------------------------------------------------- Published and accepted
+
+- title: "Do Option Characteristics Predict the Underlying Stock Returns in the Cross-Section?"
+  status: accepted
+  coauthors:
+    - {name: "Xiaoxiao Tang", url: "https://sites.google.com/view/xiaoxiaotang-homepage"}
+    - {name: "Rasmus Varneskov", url: "https://sites.google.com/site/rasmusvarneskov/home"}
+    - {name: "Guofu Zhou", url: "http://apps.olin.wustl.edu/faculty/zhou/"}
+  journal: "Management Science"
+  links:
+    ssrn: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3795486"
+  takeaway:
+  abstract:
+  topics: []
+
+- title: "Missing Data in Asset Pricing Panels"
+  status: published
+  coauthors:
+    - {name: "Joachim Freyberger", url: "https://sites.google.com/view/joachimfreyberger/home"}
+    - {name: "Bjoern Hoeppner", url: "https://sites.google.com/view/bjoernhoeppner"}
+    - {name: "Michael Weber", url: "https://faculty.chicagobooth.edu/michael-weber/"}
+  journal: "Review of Financial Studies"
+  journal_abbr: "RFS"
+  year: 2025
+  volume: 38
+  pages: "760–802"
+  links:
+    ssrn: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3932438"
+    journal: "https://doi.org/10.1093/rfs/hhae003"
+  takeaway:
+  abstract:
+  topics: []
+
+- title: "Characteristic-based Returns: Alpha or Smart Beta?"
+  status: published
+  coauthors:
+    - {name: "Soohun Kim", url: "https://soohunkimi.github.io/myWebpage/"}
+    - {name: "Robert Korajczyk", url: "https://www.kellogg.northwestern.edu/faculty/directory/korajczyk_robert.aspx"}
+  journal: "Journal of Investment Management"
+  year: 2022
+  volume: 20
+  pages: "70–89"
+  links:
+    ssrn: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3880589"
+  takeaway:
+  abstract:
+  topics: []
+
+- title: "Arbitrage Portfolios"
+  status: published
+  coauthors:
+    - {name: "Soohun Kim", url: "https://soohunkimi.github.io/myWebpage/"}
+    - {name: "Robert Korajczyk", url: "https://www.kellogg.northwestern.edu/faculty/directory/korajczyk_robert.aspx"}
+  journal: "Review of Financial Studies"
+  journal_abbr: "RFS"
+  year: 2021
+  volume: 34
+  pages: "2813–2856"
+  links:
+    ssrn: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3263001"
+    journal: "https://doi.org/10.1093/rfs/hhaa102"
+    code: "https://github.com/aneuhierl/arbitrage-portfolios"
+  takeaway:
+  abstract:
+  topics: []
+
+- title: "Frequency Dependent Risk"
+  status: published
+  coauthors:
+    - {name: "Rasmus Varneskov", url: "https://sites.google.com/site/rasmusvarneskov/home"}
+  journal: "Journal of Financial Economics"
+  journal_abbr: "JFE"
+  year: 2021
+  volume: 140
+  pages: "644–675"
+  links:
+    ssrn: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3260167"
+    journal: "https://doi.org/10.1016/j.jfineco.2021.01.007"
+  takeaway:
+  abstract:
+  topics: []
+
+- title: "Estimating the Anomaly Base Rate"
+  status: published
+  coauthors:
+    - {name: "Alex Chinco", url: "http://www.alexchinco.com/"}
+    - {name: "Michael Weber", url: "https://faculty.chicagobooth.edu/michael-weber/"}
+  journal: "Journal of Financial Economics"
+  journal_abbr: "JFE"
+  year: 2021
+  volume: 140
+  pages: "101–126"
+  links:
+    ssrn: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3344499"
+    journal: "https://doi.org/10.1016/j.jfineco.2020.12.003"
+  takeaway:
+  abstract:
+  topics: []
+
+- title: "Data Snooping in Equity Premium Prediction"
+  status: published
+  coauthors:
+    - {name: "Hubert Dichtl", url: "https://www.dichtl-research-consulting.de/?lang=en#home"}
+    - {name: "Wolfgang Drobetz"}
+    - {name: "Viktoria-Sophie Wendt"}
+  journal: "International Journal of Forecasting"
+  journal_abbr: "IJF"
+  year: 2021
+  volume: 37
+  pages: "72–94"
+  links:
+    ssrn: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2972011"
+    journal: "https://doi.org/10.1016/j.ijforecast.2020.03.002"
+  takeaway:
+  abstract:
+  topics: []
+
+- title: "Dissecting Characteristics Nonparametrically"
+  status: published
+  coauthors:
+    - {name: "Joachim Freyberger", url: "https://sites.google.com/view/joachimfreyberger/home"}
+    - {name: "Michael Weber", url: "https://faculty.chicagobooth.edu/michael-weber/"}
+  journal: "Review of Financial Studies"
+  journal_abbr: "RFS"
+  year: 2020
+  volume: 33
+  pages: "2326–2377"
+  links:
+    ssrn: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2820700"
+    journal: "https://doi.org/10.1093/rfs/hhz123"
+  takeaway:
+  abstract:
+  topics: []
+
+- title: "Monetary Policy Communication, Policy Slope and the Stock Market"
+  status: published
+  coauthors:
+    - {name: "Michael Weber", url: "https://faculty.chicagobooth.edu/michael-weber/"}
+  journal: "Journal of Monetary Economics"
+  journal_abbr: "JME"
+  year: 2019
+  volume: 108
+  pages: "140–155"
+  links:
+    ssrn: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2748290"
+    journal: "https://doi.org/10.1016/j.jmoneco.2019.08.005"
+  takeaway:
+  abstract:
+  topics: []
+
+- title: "Market Reaction to Corporate Press Releases"
+  status: published
+  coauthors:
+    - {name: "Anna Scherbina", url: "http://people.brandeis.edu/~ascherbina/index.html"}
+    - {name: "Bernd Schlusche", url: "https://sites.google.com/site/schlusche/home"}
+  journal: "Journal of Financial and Quantitative Analysis"
+  journal_abbr: "JFQA"
+  year: 2013
+  volume: 48
+  pages: "1207–1240"
+  links:
+    ssrn: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1556532"
+    journal: "https://doi.org/10.1017/S002210901300046X"
+  takeaway:
+  abstract:
+  topics: []
+
+- title: "Growth Optimal Investment Strategy: The Impact of Reallocation Frequency and Heavy Tails"
+  status: published
+  coauthors:
+    - {name: "Günter Bamberg"}
+  journal: "German Economic Review"
+  journal_abbr: "GER"
+  year: 2012
+  volume: 13
+  pages: "228–240"
+  links:
+    journal: "https://doi.org/10.1111/j.1468-0475.2011.00553.x"
+  takeaway:
+  abstract:
+  topics: []
+
+- title: "Data Snooping and Market-Timing Rule Performance"
+  status: published
+  coauthors:
+    - {name: "Bernd Schlusche", url: "https://sites.google.com/site/schlusche/home"}
+  journal: "Journal of Financial Econometrics"
+  journal_abbr: "JFEC"
+  year: 2011
+  volume: 9
+  pages: "550–587"
+  links:
+    ssrn: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1343896"
+    journal: "https://doi.org/10.1093/jjfinec/nbq032"
+  takeaway:
+  abstract:
+  topics: []
+
+- title: "On the non-existence of conditional value-at-risk under heavy tails and short sales"
+  status: published
+  coauthors:
+    - {name: "Günter Bamberg"}
+  journal: "OR Spectrum"
+  journal_abbr: "ORS"
+  year: 2010
+  volume: 32
+  pages: "49–60"
+  links:
+    ssrn: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1348987"
+    journal: "https://doi.org/10.1007/s00291-008-0138-3"
+  takeaway:
+  abstract:
+  topics: []
+
+# ---------------------------------------------------------------- Working papers
+
+- title: "Is Expected Market Volatility a Priced Risk Factor?"
+  status: working
+  coauthors:
+    - {name: "Yuan Liao", url: "https://pliaoxp.github.io/"}
+    - {name: "Viktor Todorov", url: "https://sites.google.com/view/viktor-todorov"}
+  rr_journal:
+  links:
+    ssrn: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6939978"
+  takeaway:
+  abstract:
+  topics: []
+
+- title: "International Investing: Diversification and Beyond"
+  status: working
+  coauthors:
+    - {name: "Soohun Kim", url: "https://soohunkimi.github.io/myWebpage/"}
+    - {name: "Robert Korajczyk", url: "https://www.kellogg.northwestern.edu/faculty/directory/korajczyk_robert.aspx"}
+  rr_journal:
+  links:
+    ssrn: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5767162"
+  takeaway:
+  abstract:
+  topics: []
+
+- title: "The Uncertainty of Machine Learning Predictions in Asset Pricing"
+  status: working
+  coauthors:
+    - {name: "Yuan Liao", url: "https://pliaoxp.github.io/"}
+    - {name: "Xinjie Ma", url: "https://xinjiema.super.site"}
+    - {name: "Linda Schilling", url: "https://sites.google.com/view/lindamarleneschilling/home"}
+  rr_journal:
+  links:
+    ssrn: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5160731"
+  takeaway:
+  abstract:
+  topics: []
+
+- title: "Benign Overfitting in Economic Forecasting via Noise Regularization"
+  status: working
+  coauthors:
+    - {name: "Yuan Liao", url: "https://pliaoxp.github.io/"}
+    - {name: "Xinjie Ma", url: "https://xinjiema.super.site"}
+    - {name: "Zhentao Shi", url: "http://zhentaoshi.github.io"}
+  rr_journal:
+  links:
+    ssrn: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4659309"
+  takeaway:
+  abstract:
+  topics: []
+
+- title: "Timing the Factor Zoo"
+  status: working
+  coauthors:
+    - {name: "Otto Randl", url: "https://sites.google.com/site/ottorandl/"}
+    - {name: "Christoph Reschenhofer", url: "https://www.christophreschenhofer.com/home"}
+    - {name: "Josef Zechner", url: "https://www.vgsf.ac.at/faculty/vgsf-faculty/josef-zechner/"}
+  rr_journal:
+  links:
+    ssrn: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4376898"
+  takeaway:
+  abstract:
+  topics: []
+
+- title: "Robust Stock Index Return Predictions Using Deep Learning"
+  status: rr
+  coauthors:
+    - {name: "Ravi Jagannathan", url: "https://www.kellogg.northwestern.edu/faculty/directory/jagannathan_ravi.aspx"}
+    - {name: "Yuan Liao", url: "https://pliaoxp.github.io/"}
+  rr_journal: "Journal of Econometrics"
+  links:
+    ssrn: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4890466"
+  takeaway:
+  abstract:
+  topics: []
+
+- title: "Structural Deep Learning in Conditional Asset Pricing"
+  status: rr
+  coauthors:
+    - {name: "Jianqing Fan", url: "https://fan.princeton.edu"}
+    - {name: "Tracy Ke", url: "https://zke.fas.harvard.edu"}
+    - {name: "Yuan Liao", url: "https://pliaoxp.github.io/"}
+  rr_journal: "Journal of Finance"
+  links:
+    ssrn: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4117882"
+  takeaway:
+  abstract:
+  topics: []
+
+- title: "Inferences About Properties of Earnings With Disappearing Data"
+  status: working
+  coauthors:
+    - {name: "Peter Easton", url: "https://mendoza.nd.edu/mendoza-directory/profile/?slug=peter-easton"}
+    - {name: "Martin Kapons", url: "https://research.tilburguniversity.edu/en/persons/martin-kapons"}
+    - {name: "Peter Kelly", url: "https://sites.google.com/a/alumni.nd.edu/peter/research"}
+  rr_journal:
+  links:
+    ssrn: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3040354"
+  takeaway:
+  abstract:
+  topics: []
+
+- title: "Time Series Momentum around FOMC Meetings"
+  status: working
+  coauthors:
+    - {name: "Michael Weber", url: "https://faculty.chicagobooth.edu/michael-weber/"}
+  rr_journal:
+  links:
+    ssrn: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3030126"
+  takeaway:
+  abstract:
+  topics: []
+
+- title: "Liquidity Timing in Commodity Markets and the Impact of Financialization"
+  status: working
+  coauthors:
+    - {name: "Andrew Thompson"}
+  rr_journal:
+  links:
+    ssrn: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2682698"
+  takeaway:
+  abstract:
+  topics: []

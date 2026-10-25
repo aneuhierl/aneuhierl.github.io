@@ -84,93 +84,12 @@ published: true
 
 ### <a id="pubs"></a>Published and Accepted Papers ###
 
-**Do Option Characteristics Predict the Underlying Stock Returns in the Cross-Section?**  with [Xiaoxiao Tang](https://sites.google.com/view/xiaoxiaotang-homepage){:target="_blank"}, [Rasmus Varneskov](https://sites.google.com/site/rasmusvarneskov/home){:target="_blank"} and [Guofu Zhou](http://apps.olin.wustl.edu/faculty/zhou/){:target="_blank"}   
-_Management Science_, accepted for publication.     
-[[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3795486){:target="_blank"}
-
-**Missing Data in Asset Pricing Panels** with [Joachim Freyberger](https://sites.google.com/view/joachimfreyberger/home){:target="_blank"} and [Bjoern Hoeppner](https://sites.google.com/view/bjoernhoeppner){:target="_blank"} and [Michael Weber](https://faculty.chicagobooth.edu/michael-weber/){:target="_blank"}      
-_Review of Financial Studies_, (2025), 38, 760–802.
-[[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3932438){:target="_blank"}
-[[RFS]](https://doi.org/10.1093/rfs/hhae003){:target="_blank"}
-
-**Characteristic-based Returns: Alpha or Smart Beta?**  with [Soohun Kim](https://soohunkimi.github.io/myWebpage/){:target="_blank"} and [Robert Korajczyk](https://www.kellogg.northwestern.edu/faculty/directory/korajczyk_robert.aspx){:target="_blank"}  
-_Journal of Investment Management_, (2022), 20, 70–89.  
-[[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3880589){:target="_blank"}
-
-**Arbitrage Portfolios**  with [Soohun Kim](https://soohunkimi.github.io/myWebpage/) and [Robert Korajczyk](https://www.kellogg.northwestern.edu/faculty/directory/korajczyk_robert.aspx){:target="_blank"}  
-_Review of Financial Studies_, (2021), 34, 2813–2856.  
-[[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3263001){:target="_blank"}
-[[RFS]](https://doi.org/10.1093/rfs/hhaa102){:target="_blank"}
-[[Code]](https://github.com/aneuhierl/arbitrage-portfolios){:target="_blank"}
-
-**Frequency Dependent Risk** 
-with [Rasmus Varneskov](https://sites.google.com/site/rasmusvarneskov/home){:target="_blank"}  
-_Journal of Financial Economics_, (2021), 140, 644-675.   
-[[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3260167){:target="_blank"}
-[[JFE]](https://doi.org/10.1016/j.jfineco.2021.01.007){:target="_blank"}
-
-**Estimating the Anomaly Base Rate**  with [Alex Chinco](http://www.alexchinco.com/){:target="_blank"} and [Michael Weber](https://faculty.chicagobooth.edu/michael-weber/){:target="_blank"}  
-_Journal of Financial Economics_, (2021), 140, 101-126.  
-[[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3344499){:target="_blank"}
-[[JFE]](https://doi.org/10.1016/j.jfineco.2020.12.003){:target="_blank"}
-
-**Data Snooping in Equity Premium Prediction**  with [Hubert Dichtl](https://www.dichtl-research-consulting.de/?lang=en#home){:target="_blank"}, Wolfgang Drobetz and Viktoria-Sophie Wendt  
-_International Journal of Forecasting_, (2021), 37, 72-94.    
-[[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2972011){:target="_blank"}
-[[IJF]](https://doi.org/10.1016/j.ijforecast.2020.03.002){:target="_blank"}
-
-**Dissecting characteristics nonparametrically** with [Joachim Freyberger](https://sites.google.com/view/joachimfreyberger/home){:target="_blank"} and [Michael Weber](https://faculty.chicagobooth.edu/michael-weber/){:target="_blank"}  
-_Review of Financial Studies_, (2020), 33, 2326-2377.  
-[[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2820700){:target="_blank"} [[RFS]](https://doi.org/10.1093/rfs/hhz123){:target="_blank"}
-
-**Monetary Policy Communication, Policy Slope and the Stock Market**  with [Michael Weber](https://faculty.chicagobooth.edu/michael-weber/){:target="_blank"}  
-_Journal of Monetary Economics_, (2019), 108, 140-155.  
-[[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2748290){:target="_blank"} [[JME]](https://doi.org/10.1016/j.jmoneco.2019.08.005){:target="_blank"}
-
-**Market Reaction to Corporate Press Releases**   with [Anna Scherbina](http://people.brandeis.edu/~ascherbina/index.html){:target="_blank"} and [Bernd Schlusche](https://sites.google.com/site/schlusche/home){:target="_blank"}  
-_Journal of Financial and Quantitative Analysis_, (2013), 48, 1207-1240.  
-[[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1556532){:target="_blank"} [[JFQA]](https://doi.org/10.1017/S002210901300046X){:target="_blank"}
-
-**Growth Optimal Investment Strategy: The Impact of Reallocation Frequency and Heavy Tails**  with Günter Bamberg  
-_German Economic Review_, (2012), 13, 228–240.  
-[[GER]](https://doi.org/10.1111/j.1468-0475.2011.00553.x){:target="_blank"}
-
-**Data Snooping and Market-Timing Rule Performance**  with [Bernd Schlusche](https://sites.google.com/site/schlusche/home){:target="_blank"}  
-_Journal of Financial Econometrics_, (2011), 9, 550-587.  
-[[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1343896){:target="_blank"} [[JFEC]](https://doi.org/10.1093/jjfinec/nbq032){:target="_blank"}
-
-**On the non-existence of conditional value-at-risk under heavy tails and short sales**  with Günter Bamberg  
-_OR Spectrum_, (2010), 32, 49-60.  
-[[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1348987){:target="_blank"} [[ORS]](https://doi.org/10.1007/s00291-008-0138-3){:target="_blank"}
-
+{% for paper in site.data.papers %}{% if paper.status == "published" or paper.status == "accepted" %}
+{% include paper.html paper=paper %}
+{% endif %}{% endfor %}
 
 ### <a id="wp"></a>Working Paper ###
-**Is Expected Market Volatility a Priced Risk Factor?**  with [Yuan Liao](https://pliaoxp.github.io/){:target="_blank"} and [Viktor Todorov](https://sites.google.com/view/viktor-todorov){:target="_blank"}  
-[[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6939978){:target="_blank"}
 
-**International Investing: Diversification and Beyond**  with [Soohun Kim](https://soohunkimi.github.io/myWebpage/) and [Robert Korajczyk](https://www.kellogg.northwestern.edu/faculty/directory/korajczyk_robert.aspx){:target="_blank"}  
-[[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5767162){:target="_blank"}
-
-**The Uncertainty of Machine Learning Predictions in Asset Pricing**  with [Yuan Liao](https://pliaoxp.github.io/){:target="_blank"}, [Xinjie Ma](https://xinjiema.super.site){:target="_blank"} and [Linda Schilling](https://sites.google.com/view/lindamarleneschilling/home){:target="_blank"}   
-[[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5160731){:target="_blank"}
-
-**Benign Overfitting in Economic Forecasting via Noise Regularization**  with [Yuan Liao](https://pliaoxp.github.io/){:target="_blank"}, [Xinjie Ma](https://xinjiema.super.site){:target="_blank"} and [Zhentao Shi](http://zhentaoshi.github.io){:target="_blank"}   
-[[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4659309){:target="_blank"}
-
-**Timing the Factor Zoo**  with [Otto Randl](https://sites.google.com/site/ottorandl/){:target="_blank"}, [Christoph Reschenhofer](https://www.christophreschenhofer.com/home){:target="_blank"} and [Josef Zechner](https://www.vgsf.ac.at/faculty/vgsf-faculty/josef-zechner/){:target="_blank"}   
-[[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4376898){:target="_blank"}
-
-**Robust Stock Index Return Predictions Using Deep Learning**  with [Ravi Jagannathan](https://www.kellogg.northwestern.edu/faculty/directory/jagannathan_ravi.aspx){:target="_blank"} and [Yuan Liao](https://pliaoxp.github.io/){:target="_blank"}  
-[[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4890466){:target="_blank"}
-
-**Structural Deep Learning in Conditional Asset Pricing**  with [Jianqing Fan](https://fan.princeton.edu){:target="_blank"}, [Tracy Ke](https://zke.fas.harvard.edu){:target="_blank"} and [Yuan Liao](https://pliaoxp.github.io/){:target="_blank"}  
-[[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4117882){:target="_blank"}
-  
-**Inferences About Properties of Earnings With Disappearing Data**  with [Peter Easton](https://mendoza.nd.edu/mendoza-directory/profile/?slug=peter-easton){:target="_blank"}, [Martin Kapons](https://research.tilburguniversity.edu/en/persons/martin-kapons){:target="_blank"} and [Peter Kelly](https://sites.google.com/a/alumni.nd.edu/peter/research){:target="_blank"}  
-[[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3040354){:target="_blank"}
-
-**Time Series Momentum around FOMC Meetings**  with [Michael Weber](https://faculty.chicagobooth.edu/michael-weber/){:target="_blank"}  
-[[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3030126){:target="_blank"}
-
-**Liquidity Timing in Commodity Markets and the Impact of Financialization**  with Andrew Thompson  
-[[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2682698){:target="_blank"}
+{% for paper in site.data.papers %}{% if paper.status == "rr" or paper.status == "working" %}
+{% include paper.html paper=paper %}
+{% endif %}{% endfor %}

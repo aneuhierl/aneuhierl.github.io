@@ -8,6 +8,9 @@ exclude: ["Makefile", "README.md"]
 url: "http://aneuhierl.github.io"     # the base hostname & protocol for your site
 baseurl: ""                  # the subpath of your site, e.g. /blog
 
+# Research page: show "Revise and resubmit, <journal>" for papers with status rr (_data/papers.yml)
+show_rr_status: false
+
 author:
     name: Andreas Neuhierl
     facebook:
