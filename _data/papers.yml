@@ -1,7 +1,10 @@
 # All papers shown on the Research page. The page is generated from this file.
 #
-# status:      published | accepted | rr | working
-#              published/accepted -> "Published and Accepted Papers"; rr/working -> "Working Paper"
+# status:      published | accepted | rr | working | other
+#              published/accepted -> "Published and Accepted Papers"; rr/working -> "Working Paper";
+#              other (book chapters etc.) -> CV "Other Publications" only, not shown on the website
+#              (fields: book, editors, publisher, year).
+# The CV's paper sections are generated from this file: ruby scripts/cv_papers.rb <cv-YYYY-MM.tex>
 # Order:       papers appear on the page in the order they appear here (newest first).
 #              When a paper is accepted: set status to accepted (or published and add year/volume/pages),
 #              fill in journal and journal_abbr, and move the block to the top of the published papers.
@@ -14,14 +17,19 @@
 # ---------------------------------------------------------------- Published and accepted
 
 - title: "Do Option Characteristics Predict the Underlying Stock Returns in the Cross-Section?"
-  status: accepted
+  status: published
   coauthors:
     - {name: "Xiaoxiao Tang", url: "https://sites.google.com/view/xiaoxiaotang-homepage"}
     - {name: "Rasmus Varneskov", url: "https://sites.google.com/site/rasmusvarneskov/home"}
     - {name: "Guofu Zhou", url: "http://apps.olin.wustl.edu/faculty/zhou/"}
   journal: "Management Science"
+  journal_abbr: "MS"
+  year: 2026
+  volume: 72
+  pages: "2742–2760"
   links:
     ssrn: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3795486"
+    journal: "https://doi.org/10.1287/mnsc.2024.04720"
   takeaway:
   abstract:
   topics: []
@@ -252,11 +260,11 @@
   topics: []
 
 - title: "Accounting Under Pressure: Recognition Rules, Insurer Bond Sales, and Real Investment"
-  status: working
+  status: rr
   coauthors:
     - {name: "John Manuel Barrios", url: "https://johnmbarrios.com/research.html"}
     - {name: "Linda Schilling", url: "https://sites.google.com/view/lindamarleneschilling/home"}
-  rr_journal:
+  rr_journal: "Journal of Accounting Research"
   links:
     ssrn: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5337889"
   takeaway:
@@ -361,3 +369,15 @@
   takeaway:
   abstract:
   topics: []
+
+# ---------------------------------------------------------------- Other publications (CV only)
+
+- title: "Casino Game Markets"
+  status: other
+  coauthors:
+    - {name: "Roland Eisenhuth"}
+    - {name: "Dermot Murphy"}
+  book: "Handbook of Behavioral Industrial Organization"
+  editors: "Victor J. Tremblay, Elizabeth Schroeder, Carol Horton Tremblay"
+  publisher: "Edward Elgar"
+  year: 2018
