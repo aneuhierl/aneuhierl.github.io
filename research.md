@@ -93,6 +93,10 @@ _Review of Financial Studies_, (2025), 38, 760–802.
 [[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3932438){:target="_blank"}
 [[RFS]](https://doi.org/10.1093/rfs/hhae003){:target="_blank"}
 
+**Characteristic-based Returns: Alpha or Smart Beta?**  with [Soohun Kim](https://soohunkimi.github.io/myWebpage/){:target="_blank"} and [Robert Korajczyk](https://www.kellogg.northwestern.edu/faculty/directory/korajczyk_robert.aspx){:target="_blank"}  
+_Journal of Investment Management_, (2022), 20, 70–89.  
+[[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3880589){:target="_blank"}
+
 **Arbitrage Portfolios**  with [Soohun Kim](https://soohunkimi.github.io/myWebpage/) and [Robert Korajczyk](https://www.kellogg.northwestern.edu/faculty/directory/korajczyk_robert.aspx){:target="_blank"}  
 _Review of Financial Studies_, (2021), 34, 2813–2856.  
 [[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3263001){:target="_blank"}
@@ -128,8 +132,8 @@ _Journal of Financial and Quantitative Analysis_, (2013), 48, 1207-1240.
 [[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1556532){:target="_blank"} [[JFQA]](https://doi.org/10.1017/S002210901300046X){:target="_blank"}
 
 **Growth Optimal Investment Strategy: The Impact of Reallocation Frequency and Heavy Tails**  with Günter Bamberg  
-__German Economic Review__, (2012), 13, 228–240.  
-[[SSRN]]() [[GER]](https://doi.org/10.1111/j.1468-0475.2011.00553.x){:target="_blank"}
+_German Economic Review_, (2012), 13, 228–240.  
+[[GER]](https://doi.org/10.1111/j.1468-0475.2011.00553.x){:target="_blank"}
 
 **Data Snooping and Market-Timing Rule Performance**  with [Bernd Schlusche](https://sites.google.com/site/schlusche/home){:target="_blank"}  
 _Journal of Financial Econometrics_, (2011), 9, 550-587.  
@@ -137,7 +141,7 @@ _Journal of Financial Econometrics_, (2011), 9, 550-587.
 
 **On the non-existence of conditional value-at-risk under heavy tails and short sales**  with Günter Bamberg  
 _OR Spectrum_, (2010), 32, 49-60.  
-[[SSRN]]() [[ORS]](https://doi.org/10.1007/s00291-008-0138-3){:target="_blank"}
+[[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1348987){:target="_blank"} [[ORS]](https://doi.org/10.1007/s00291-008-0138-3){:target="_blank"}
 
 
 ### <a id="wp"></a>Working Paper ###
@@ -157,7 +161,7 @@ _OR Spectrum_, (2010), 32, 49-60.
 [[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4376898){:target="_blank"}
 
 **Robust Stock Index Return Predictions Using Deep Learning**  with [Ravi Jagannathan](https://www.kellogg.northwestern.edu/faculty/directory/jagannathan_ravi.aspx){:target="_blank"} and [Yuan Liao](https://pliaoxp.github.io/){:target="_blank"}  
-[[SSRN]]([https://www.ssrn.com](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4890466)){:target="_blank"}
+[[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4890466){:target="_blank"}
 
 **Structural Deep Learning in Conditional Asset Pricing**  with [Jianqing Fan](https://fan.princeton.edu){:target="_blank"}, [Tracy Ke](https://zke.fas.harvard.edu){:target="_blank"} and [Yuan Liao](https://pliaoxp.github.io/){:target="_blank"}  
 [[SSRN]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4117882){:target="_blank"}
